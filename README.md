@@ -10,31 +10,35 @@
 
 Clone this repo
 
-`git clone https://github.com/marckoxx/LaraVueAct`
+`git clone https://github.com/marckoxx/webdevfinals.git`
 
-`cd LaraVueAct`
+`cd webdevfinals`
+
+Using powershell (won't work on CMD):
 
 `cp ./.env.example .env`
 
-`composer install`
+or just copy the contents of .env.example to a new file called .env
 
-`npm install`
+`composer install`
 
 `php artisan key:generate`
 
-`php artisan migrate`
+`php artisan migrate --seed`
 
-> --seed option will be added later
-
-`npm run dev`
-
-On a separate terminal:
+`npm install`
 
 If you're using vscode:
 
 `code .`
 
 Otherwise open the folder in your IDE and proceed.
+
+On one terminal:
+
+`npm run dev`
+
+On another terminal:
 
 `php artisan serve`
 
