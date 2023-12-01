@@ -5,7 +5,8 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Link, useForm, usePage } from '@inertiajs/vue3';
 
-defineProps({
+const props = defineProps({
+    barangays: Array,
     status: {
         type: String,
     },
@@ -17,7 +18,8 @@ const form = useForm({
     name: user.name,
     email: user.email,
     phone_number: user.phone_number,
-    address: user.address,
+    barangay_id: user.barangay_id,
+    street: user.street,
     sex: user.sex,
 });
 </script>
@@ -53,27 +55,32 @@ const form = useForm({
                 <InputError class="mt-2" :message="form.errors.phone_number" />
             </div>
 
-            <div class="form-group">
-                <label for="address" class="form-label">Address</label>
-                <input id="address" type="text" class="form-control mt-1" v-model="form.address" required
-                    autocomplete="address" />
-                <InputError class="mt-2" :message="form.errors.address" />
+            <div class="mb-3">
+                <label for="barangay_id" class="form-label">Barangay</label>
+                <select id="barangay_id" name="barangay_id" class="form-control mt-1" v-model="form.barangay_id" required>
+                    <option value="">Select Barangay</option>
+                    <option v-for="barangay in barangays" :key="barangay.id" :value="barangay.id">{{ barangay.name }}
+                    </option>
+                </select>
+                <InputError class="mt-2" :message="form.errors.barangay_id" />
             </div>
 
-            <div class="form-group">
-                <InputLabel for="sex" class="form-label">Sex</InputLabel>
-                <div class="form-check">
-                    <input id="male" type="radio" class="form-check-input" value="male" v-model="form.sex">
-                    <label for="male" class="form-check-label">Male</label>
-                </div>
-                <div class="form-check">
-                    <input id="female" type="radio" class="form-check-input" value="female" v-model="form.sex">
-                    <label for="female" class="form-check-label">Female</label>
-                </div>
-                <div class="form-check">
-                    <input id="other" type="radio" class="form-check-input" value="other" v-model="form.sex">
-                    <label for="other" class="form-check-label">Other</label>
-                </div>
+
+            <div class="mb-3">
+                <InputLabel for="street" value="Street" />
+                <TextInput id="street" type="text" class="form-control mt-1" v-model="form.street" required
+                    autocomplete="street" />
+                <InputError class="mt-2" :message="form.errors.street" />
+            </div>
+
+            <div class="mb-3">
+                <label for="sex">Sex</label>
+                <select id="sex" name="sex" class="form-control mt-1" v-model="form.sex" required>
+                    <option value="">Select Sex</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
                 <InputError class="mt-2" :message="form.errors.sex" />
             </div>
 

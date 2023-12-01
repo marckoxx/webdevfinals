@@ -16,12 +16,14 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone_number')->nullable();
-            $table->string('address')->nullable();
+            $table->unsignedBigInteger('barangay_id');
+            $table->string('street');
             $table->enum('sex', ['male', 'female', 'other'])->nullable();
             $table->string('password');
             $table->boolean('is_admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
+            $table->foreign('barangay_id')->references('id')->on('barangays');
         });
     }
 

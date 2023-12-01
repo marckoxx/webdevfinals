@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDashboardController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
@@ -66,9 +67,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('adminAuth')->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return Inertia::render('admin/dashboard');
-    })->name('admindash');
+    Route::resource('/admin/dashboard', AdminDashboardController::class);
 });
 
 require __DIR__ . '/auth.php';

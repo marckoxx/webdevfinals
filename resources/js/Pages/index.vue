@@ -1,11 +1,6 @@
 <template>
     <Head title="Home" />
-    <template v-if="authUser">
-        <AuthenticatedLayout />
-    </template>
-    <template v-else>
-        <GuestLayout />
-    </template>
+    <Layout />
         <main>
             <section class="container1">
                 <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
@@ -186,6 +181,7 @@
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Layout from '@/Layouts/Layout.vue';
 import Footer from '@/Layouts/Footer.vue';
 import { ref, defineProps } from 'vue';
 

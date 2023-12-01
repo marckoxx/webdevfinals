@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Models\Barangay;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Auth\Events\Registered;
+use App\Providers\RouteServiceProvider;
 
 class RegisteredUserController extends Controller
 {
@@ -21,7 +22,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): Response
     {
-        return Inertia::render('Auth/Register');
+        $barangays = Barangay::all(); // Fetch all barangay data
+        return inertia('Auth/Register', ['barangays' => $barangays]);
     }
 
     /**
@@ -33,21 +35,29 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
+            'email' => 'required|string|lowercase|email|max:255|unique:' . User::class,
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'phone_number' => 'required|string|max:20',
-            'address' => 'required|string|max:255',
+            'phone_number' => 'nullable|string|max:20', // Making phone_number nullable
+            'street' => 'required|string|max:255',
             'sex' => 'required|in:male,female,other',
+            'barangay_id' => 'required|exists:barangays,id'
         ]);
 
-        $user = User::create([
+        $userData = [
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'phone_number' => $request->phone_number,
-            'address' => $request->address,
+            'street' => $request->street,
+            'barangay_id' => $request->barangay_id,
             'sex' => $request->sex,
-        ]);
+        ];
+
+        if ($request->filled('phone_number')) {
+            $userData['phone_number'] = $request->phone_number;
+        }
+
+        $user = User::create($userData);
+
 
         event(new Registered($user));
 
