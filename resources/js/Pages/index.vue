@@ -17,17 +17,23 @@
                         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"
                             aria-label="Slide 3"></button>
                     </div>
-                    <div class="carousel-inner">
+                    <div class="carousel-inner ">
                         <div class="carousel-item active">
-                            <img :src="'images/logo/carouasel2.jpg'" alt="First Image" style="max-height: calc(100vh-63px);"
+                            <img :src="'images/logo/carousel2.jpg'" alt="First Image" style="max-height: calc(100vh-63px);"
                                 class="img-fluid w-100">
                             <div class="container">
-                                <div class="carousel-caption  d-flex flex-column align-items-center">
-                                    <h1>Ride, Explore, Repeat.</h1>
-                                    <p class="opacity-75">Where Every Mile is a Memory.</p>
-                                    <p>
-                                        <Link class="btn btn-lg" :href="route('catalog.index')">Rent Now</Link>
-                                    </p>
+                                <div class="carousel-caption" style="width:90%;" >
+                                    <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
+                                        <h1 class="display-3 pb-2 pb-sm-3" style="font-weight: 700;"> <span class="text">Ride.</span>  <span>Explore</span>. Repeat.</h1>>
+                                        <p class="carousel-text fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5" style="font-weight: 700;">
+                                            "Discover the freedom of the open road with our motorcycle rental services.
+                                            Unleash your adventurous spirit and explore the world on two wheels.
+                                            Ride with us and make every journey an unforgettable experience."
+                                        </p>
+                                    <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
+                                        <Link :href="route('catalog.index')" type="button" class="btn     me-3 me-sm-4" id="btn-show" style="font-weight: 600; font-size: 30px;">Rent Now</Link>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -35,12 +41,20 @@
                             <img :src="'images/logo/carousel3.jpg'" alt="Second Image" style="max-height: calc(100vh-63px);"
                                 class="img-fluid w-100">
                             <div class="container">
-                                <div class="carousel-caption  d-flex flex-column align-items-center">
-                                    <h1>Ride, Explore, Repeat.</h1>
-                                    <p class="opacity-75">Where Every Mile is a Memory.</p>
-                                    <p>
-                                        <Link class="btn btn-lg" :href="route('catalog.index')">Rent Now</Link>
-                                    </p>
+                                <div class="carousel-caption" style="width:90%;" >
+                                    <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
+                                        <h1 class="display-3 pb-2 pb-sm-3" style="font-weight: 700;"> <span class="text">Ride.</span>  <span>Explore</span>. Repeat.</h1>
+                                        <p class="carousel-text fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5" style="font-weight: 700;">
+                                            "Discover the freedom of the open road with our motorcycle rental services.
+                                            Unleash your adventurous spirit and explore the world on two wheels.
+                                            Ride with us and make every journey an unforgettable experience."
+                                        </p>
+
+                                    <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
+                                        <Link :href="route('catalog.index')" type="button" class="btn   me-3 me-sm-4" id="btn-show" style="font-weight: 600; font-size: 30px;">Rent Now
+                                </Link>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -48,12 +62,19 @@
                             <img :src="'images/logo/carousel1.jpg'" alt="Third Image" style="max-height: calc(100vh-63px);"
                                 class="img-fluid w-100">
                             <div class="container">
-                                <div class="carousel-caption  d-flex flex-column align-items-center">
-                                    <h1>Ride, Explore, Repeat.</h1>
-                                    <p class="opacity-75">Where Every Mile is a Memory.</p>
-                                    <p>
-                                        <Link class="btn btn-lg" :href="route('catalog.index')">Rent Now</Link>
-                                    </p>
+                                <div class="carousel-caption" style="width:90%;" >
+                                    <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
+                                        <h1 class="display-3 pb-2 pb-sm-3" style="font-weight: 700;"> <span class="text">Ride.</span>  <span>Explore</span>. Repeat.</h1>
+                                        <p class="carousel-text fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5" style="font-weight: 700;">
+                                            "Discover the freedom of the open road with our motorcycle rental services.
+                                            Unleash your adventurous spirit and explore the world on two wheels.
+                                            Ride with us and make every journey an unforgettable experience."
+                                        </p>
+                                    <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
+                                        <Link :href="route('catalog.index')" type="button" class="btn  me-3 me-sm-4" id="btn-show" style="font-weight: 600; font-size: 30px;">Rent Now
+                                </Link>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -71,18 +92,18 @@
             <section class="container2 d-flex flex-column justify-content-center align-items-center">
                 <section class="py-5 text-center container">
                     <div class="row py-lg-5">
-                        <div class="col-lg-8 col-md-10 col-sm-12 mx-auto"> <!-- Adjusted column classes -->
-                            <h1 class="fw-light">Featured Motorcycles</h1>
-                            <p class="lead text-body-secondary">24/7 efficient online quotation for your convenience. Choose
-                                your Bike and get a motorcycle rental quote now.</p>
-                        </div>
+                        <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+                        <h1 class="fw-700" style="font-size: 50px; color: blueviolet;">Featured Motorcycles</h1>
+                        <p class="lead text-body-secondary">24/7 efficient online quotation for your convenience. Choose your Bike and get a motorcycle rental quote now.</p>
+                </div>
+
                     </div>
                 </section>
-                <div class="album py-5 bg-body-tertiary">
+                <div class="album py-2 bg-body-tertiary">
                     <div class="container d-flex flex-column align-items-center">
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                            <div class="col">
-                                <div class="card shadow-sm">
+                            <div class="col1">
+                                <div class="card shadow-sm d-flex flex-column h-100">
                                     <img :src="'images/vespa/vespa3.webp'" alt="Third Image" class="img-fluid w-100 h-100">
                                     <div class="card-body d-flex justify-content-center">
                                         <p class="card-text">Vespa X-400</p>
@@ -90,39 +111,38 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="card shadow-sm">
-                                    <img :src="'images/suzuki/suzuki5.webp'" alt="Third Image"
-                                        class="img-fluid w-100 h-100">
+                                <div class="card shadow-sm d-flex flex-column h-100">
+                                    <img :src="'images/suzuki/suzuki5.webp'" alt="Third Image" class="img-fluid w-100 h-100">
                                     <div class="card-body d-flex justify-content-center">
                                         <p class="card-text">Suzuki Hayabusa</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="card shadow-sm">
-                                    <img :src="'images/honda/honda5.png'" alt="Third Image" class="img-fluid w-100 h-100">
+                                <div class="card shadow-sm d-flex flex-column h-100">
+                                    <img :src="'images/suzuki/suzuki3.webp'" alt="Third Image" class="img-fluid w-100 h-100">
                                     <div class="card-body d-flex justify-content-center">
-                                        <p class="card-text ">Honda CBR-400</p>
+                                        <p class="card-text">Honda Smash 125</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <Link :href="route('catalog.index')" type="button" class="btn btn-primary btn-sm " id="btn-show">
-                        Show more
+
+                        <Link :href="route('catalog.index')" type="button" class="btn btn-sm mt-5" id="btn-show" style="font-size: 20px; font-weight: 700;" >Show more
+
                         </Link>
                     </div>
                 </div>
             </section>
-            <section class="container d-flex flex-column align-items-center">
+            <section class="container d-flex flex-column align-items-center mt-5">
                 <hr class="featurette-divider">
-                <div class="brand">
-                    <h1>Brand</h1>
-                </div>
-                <div class="row featurette m-8">
+                <h1 class="brand" style=";font-weight: 700;">Brands</h1>
+                <div class="row featurette mx-98">
                     <div class="col-md-7">
-                        <h2 class="featurette-heading fw-normal lh-1">Honda</h2>
-                        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
-                            prose here.</p>
+                        <h2 class="featurette-heading fw-normal lh-1 ">Honda</h2>
+                        <p class="lead">Explore the cityscape on a reliable Honda rental motorcycle.
+                             Known for their efficiency and smooth rides,
+                             Honda bikes are the perfect choice for urban adventures and beyond.</p>
                     </div>
                     <div class="col-md-5">
                         <img :src="'images/logo/hondologo.jpg'" alt="Third Image" class="img-fluid w-100 h-100">
@@ -134,8 +154,9 @@
                 <div class="row featurette m-8">
                     <div class="col-md-7 order-md-2">
                         <h2 class="featurette-heading fw-normal lh-1">Kawasaki</h2>
-                        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of
-                            how this layout would work with some actual real-world content in place.</p>
+                        <p class="lead">Unleash the power of the road with our Kawasaki rental motorcycles.
+                            Renowned for their high-performance engines and cutting-edge design,
+                            Kawasaki bikes are your ticket to an adrenaline-fueled experience.</p>
                     </div>
                     <div class="col-md-5 order-md-1">
                         <img :src="'images/logo/kawasakilogo.webp'" alt="Third Image" class="img-fluid w-100 h-100">
@@ -147,9 +168,9 @@
                 <div class="row featurette m-8">
                     <div class="col-md-7">
                         <h2 class="featurette-heading fw-normal lh-1">Suzuki</h2>
-                        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not
-                            really intended to be actually read, simply here to give you a better view of what this would
-                            look like with some actual content. Your content.</p>
+                        <p class="lead">Embark on a thrilling journey with our Suzuki rental motorcycles.
+                            Suzuki's combination of style and performance ensures an exhilarating ride,
+                            whether you're cruising through scenic routes or navigating city streets..</p>
                     </div>
                     <div class="col-md-5">
                         <img :src="'images/logo/suzukilogo.jpg'" alt="Third Image" class="img-fluid w-100 h-100">
@@ -159,8 +180,9 @@
                 <div class="row featurette m-8">
                     <div class="col-md-7 order-md-2">
                         <h2 class="featurette-heading fw-normal lh-1">Vespa</h2>
-                        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of
-                            how this layout would work with some actual real-world content in place.</p>
+                        <p class="lead">Experience the charm of the city with our Vespa rental scooters.
+                            Stylish, iconic, and perfect for urban exploration,
+                            Vespa scooters provide a unique and fashionable way to navigate your surroundings.</p>
                     </div>
                     <div class="col-md-5 order-md-1">
                         <img :src="'images/logo/vespalogo.jpg'" alt="Third Image" class="img-fluid w-100 h-100">
@@ -170,9 +192,10 @@
                 <div class="row featurette m-8">
                     <div class="col-md-7">
                         <h2 class="featurette-heading fw-normal lh-1">Yamaha</h2>
-                        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not
-                            really intended to be actually read, simply here to give you a better view of what this would
-                            look like with some actual content. Your content.</p>
+                        <p class="lead">Ride in style and comfort with our Yamaha rental motorcycles.
+                            From sleek sportbikes to versatile cruisers,
+                            Yamaha offers a diverse range of bikes for every rider's preference,
+                            ensuring an enjoyable and memorable journey.</p>
                     </div>
                     <div class="col-md-5">
                         <img :src="'images/logo/yamahalogo.jpg'" alt="Third Image" class="img-fluid w-100 h-100">
@@ -198,3 +221,72 @@ const props = defineProps({
 
 const authUser = ref(props.auth.user !== null);
 </script>
+<style scoped>
+    *{
+    font-family: var(--si-body-font-family);
+    line-height: var(--si-body-line-height);
+}
+.btn {
+    color: #FFFFD0;
+  --c: no-repeat linear-gradient(#FFFFD0 0 0);
+  background:
+    var(--c)  calc(-101% + var(--p,0%)) 100%,
+    var(--c)  calc( 201% - var(--p,0%)) 0;
+  background-size: 50.1% var(--p,.08em);
+  transition: .3s var(--t,0s), background-position .3s calc(.3s - var(--t,0s));
+}
+.btn:hover {
+  --p: 101%;
+  --t: 0.3s;
+  color: #A555EC;
+ font-weight: 300;
+}
+.card-text{
+    font-weight: 600;
+    color: #A555EC;
+}
+#btn-show{
+
+    color: #A555EC;
+  --c: no-repeat linear-gradient(#FFA1F5 0 0);
+  background:
+    var(--c)  calc(-101% + var(--p,0%)) 100%,
+    var(--c)  calc( 201% - var(--p,0%)) 0;
+  background-size: 50.1% var(--p,.08em);
+  transition: .3s var(--t,0s), background-position .3s calc(.3s - var(--t,0s));
+
+  border-radius: 7 0 7 0;
+}
+#btn-show:hover{
+    --p: 101%;
+  --t: 0.3s;
+  color: #FFFFD0;
+ font-weight: 300;
+}
+.carousel-text{
+    color: #FFFFD0;
+}
+span{
+    color: #A555EC;
+}
+.text{
+    color: #FFFFD0;
+}
+h2{
+    color: #A555EC
+    ;
+}
+.card{
+    -webkit-filter: brightness(50%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius:  20px 0 20px 0;
+}
+.card:hover{
+    -webkit-filter: brightness(100%);
+}
+</style>
