@@ -26,11 +26,11 @@ function reserveMotorcycle() {
                 Go Back
             </Link>
             <div class="row">
-                <div class="col-md-10 mx-auto">
-                    <div class="card">
-                        <img :src="getImagePath(motorcycle)" :alt="motorcycle.model" class="card-img-top w-100"
-                            style="object-fit: cover; max-height: 500px;">
-                        <div class="card-body">
+                <div class="col-lg-6 py-lg-4 ps-lg-5">
+                    <img :src="getImagePath(motorcycle)" :alt="motorcycle.model" class="card-img-top w-100"
+                    style="object-fit: cover; max-height: 500px;">
+                </div>
+                        <div class="col-lg-6 py-lg-4 ps-lg-5">
                             <p class="card-text">Brand: {{ motorcycle.brand.name }}</p>
                             <p class="card-text">Model: {{ motorcycle.model }}</p>
                             <p class="card-text">Type: {{ motorcycle.type.name }}</p>
@@ -48,9 +48,7 @@ function reserveMotorcycle() {
                                 Reserve Now
                             </button>
                         </div>
-                    </div>
                 </div>
             </div>
-        </div>
     </GuestLayout>
 </template>

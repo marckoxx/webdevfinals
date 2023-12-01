@@ -2,7 +2,7 @@
     <GuestLayout>
         <main class="about-section">
             <section class="container my-4">
-                <div class="about-content text-center">
+                <div class="about-content text-center my-5">
                     <h1>About MotoRent</h1>
                     <p>
                         Welcome to MotoRent, your go-to destination for motorcycle rentals and unforgettable adventures! We
@@ -13,7 +13,7 @@
                     <!-- Add the rest of your content -->
                 </div>
 
-                <hr class="featurette-divider">
+                <hr class="featurette-divider my-5">
 
                 <div v-for="(feature, index) in features" :key="index" class="row featurette">
                     <div :class="['col-md-7', index % 2 === 0 ? '' : 'order-md-2']">
@@ -37,19 +37,19 @@ const features = [
     {
         title: 'Vision',
         content: 'To be the premier choice for motorcycle enthusiasts seeking exceptional rental experiences, offering a diverse range of impeccably maintained motorcycles and fostering a community passionate about safe and unforgettable adventures.',
-        image: 'path_to_your_image',
+        image: 'images/logo/pics1.avif',
         alt: 'Vision Image'
     },
     {
         title: 'Mission',
         content: 'At MotoRent, our mission is to provide riders of all levels and group sizes with access to a diverse fleet of well-maintained motorcycles. We prioritize safety by regularly servicing and meticulously cleaning our motorcycles, ensuring peace of mind for our customers as they embark on their journeys. We aim to create memorable experiences and cultivate a community of passionate riders.',
-        image: 'path_to_your_image',
+        image: 'images/logo/pics2.avif',
         alt: 'Mission Image'
     },
     {
         title: 'Goals',
         content: 'Provide an extensive and diverse fleet of motorcycles to cater to the needs and preferences of riders at different skill levels and group sizes. Maintain a stringent maintenance schedule to ensure the highest standards of safety and reliability for all our motorcycles. Continuously improve customer experience by offering exceptional service, streamlined booking processes, and personalized assistance. Foster a community of riders by organizing events, sharing resources, and creating opportunities for networking and shared experiences. Expand our reach and establish MotoRent as the go-to destination for motorcycle enthusiasts across diverse regions, fostering a global community of passionate riders.',
-        image: 'path_to_your_image',
+        image: 'images/logo/pics3.avif',
         alt: 'Goal Image'
     }
 ];
