@@ -1,10 +1,5 @@
 <template>
-    <template v-if="authUser">
-        <AuthenticatedLayout />
-    </template>
-    <template v-else>
-        <GuestLayout />
-    </template>
+    <Layout />
     <template v-if="authUser && isAdmin">
         <main class="container-fluid">
             <div class="row">
@@ -137,8 +132,10 @@
                                         <div class="py-4 card-body">
                                             <div class="d-flex align-items-start">
                                                 <div class="flex-grow-1">
-                                                    <h3 class="mb-2">43</h3>
-                                                    <p class="mb-2">Available Motorcycle</p>
+                                                    <h3 class="mb-2">{{ motorCount }}</h3>
+                                                    <p class="mb-2">
+                                                        {{ motorCount === 1 ? 'Available Motorcycle' : 'Available Motorcycles' }}
+                                                    </p>
                                                     <div class="mb-0">
                                                         <span class="badge-soft-danger me-2 badge">-4.25%</span>
                                                         <span class="text-muted">This Month</span>
@@ -206,16 +203,27 @@
 <script setup>
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Layout from '@/Layouts/Layout.vue';
 import Footer from '@/Layouts/Footer.vue';
-import { ref, defineProps } from 'vue';
-import { router, Link } from '@inertiajs/vue3';
+import { ref, defineProps, onMounted } from 'vue';
+import { router, Link, usePage } from '@inertiajs/vue3';
 
 const props = defineProps({
     auth: {
         type: Object,
         required: true,
     },
+    motorcycles: Array,
 });
+
+const motorCount = ref(0);
+const { $inertia } = usePage();
+
+onMounted(async () => {
+    // Assuming motorcycles array is fetched from Laravel and passed as a prop
+    motorCount.value = props.motorcycles.length;
+});
+
 
 const authUser = ref(props.auth.user !== null);
 const isAdmin = props.auth.user && props.auth.user.is_admin === 1;
@@ -225,43 +233,4 @@ function goBack() {
     window.history.back();
 }
 
-const features = [
-    {
-        title: 'Vision',
-        content: 'To be the premier choice for motorcycle enthusiasts seeking exceptional rental experiences, offering a diverse range of impeccably maintained motorcycles and fostering a community passionate about safe and unforgettable adventures.',
-        image: 'path_to_your_image',
-        alt: 'Vision Image'
-    },
-    {
-        title: 'Mission',
-        content: 'At MotoRent, our mission is to provide riders of all levels and group sizes with access to a diverse fleet of well-maintained motorcycles. We prioritize safety by regularly servicing and meticulously cleaning our motorcycles, ensuring peace of mind for our customers as they embark on their journeys. We aim to create memorable experiences and cultivate a community of passionate riders.',
-        image: 'path_to_your_image',
-        alt: 'Mission Image'
-    },
-    {
-        title: 'Goals',
-        content: 'Provide an extensive and diverse fleet of motorcycles to cater to the needs and preferences of riders at different skill levels and group sizes. Maintain a stringent maintenance schedule to ensure the highest standards of safety and reliability for all our motorcycles. Continuously improve customer experience by offering exceptional service, streamlined booking processes, and personalized assistance. Foster a community of riders by organizing events, sharing resources, and creating opportunities for networking and shared experiences. Expand our reach and establish MotoRent as the go-to destination for motorcycle enthusiasts across diverse regions, fostering a global community of passionate riders.',
-        image: 'path_to_your_image',
-        alt: 'Goal Image'
-    }
-];
 </script>
-
-<style scoped>
-/* Add your custom styles here */
-.about-section {
-    /* Your styles */
-}
-
-.about-content {
-    /* Your styles */
-}
-
-.featurette-divider {
-    /* Your styles */
-}
-
-.featurette-image {
-    /* Your styles */
-}
-</style>

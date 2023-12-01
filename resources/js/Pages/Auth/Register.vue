@@ -12,7 +12,8 @@ const form = useForm({
     password: '',
     password_confirmation: '',
     phone_number: '',
-    address: '',
+    barangay_id: '', // Added barangay_id field for the dropdown menu
+    street: '', // Added street text field
     sex: '',
 });
 
@@ -21,6 +22,10 @@ const submit = () => {
         onFinish: () => form.reset('password', 'password_confirmation'),
     });
 };
+
+const props = defineProps({
+    barangays: Object
+});
 </script>
 
 <template>
@@ -52,28 +57,33 @@ const submit = () => {
                 </div>
 
                 <div class="mb-3">
-                    <InputLabel for="address" value="Address" />
-                    <TextInput id="address" type="text" class="form-control mt-1" v-model="form.address" required
-                        autocomplete="address" />
-                    <InputError class="mt-2" :message="form.errors.address" />
+                    <label for="barangay_id" value="Barangay">Barangay</label>
+                    <select id="barangay_id" name="barangay_id" class="form-control mt-1" v-model="form.barangay_id" required>
+                        <option value="">Select Barangay</option>
+                        <option v-for="barangay in barangays" :key="barangay.id" :value="barangay.id">{{
+                            barangay.name }}</option>
+                    </select>
+                    <InputError class="mt-2" :message="form.errors.barangay_id" />
                 </div>
 
                 <div class="mb-3">
-                    <InputLabel for="sex">Sex</InputLabel>
-                    <div class="form-check">
-                        <input id="male" type="radio" class="form-check-input" value="male" v-model="form.sex">
-                        <label for="male" class="form-check-label">Male</label>
-                    </div>
-                    <div class="form-check">
-                        <input id="female" type="radio" class="form-check-input" value="female" v-model="form.sex">
-                        <label for="female" class="form-check-label">Female</label>
-                    </div>
-                    <div class="form-check">
-                        <input id="other" type="radio" class="form-check-input" value="other" v-model="form.sex">
-                        <label for="other" class="form-check-label">Other</label>
-                    </div>
-                    <p v-if="form.errors.sex" class="mt-2 text-danger"></p>
+                    <InputLabel for="street" value="Street" />
+                    <TextInput id="street" type="text" class="form-control mt-1" v-model="form.street" required
+                        autocomplete="street" />
+                    <InputError class="mt-2" :message="form.errors.street" />
                 </div>
+
+                <div class="mb-3">
+                    <label for="sex">Sex</label>
+                    <select id="sex" name="sex" class="form-control mt-1" v-model="form.sex" required>
+                        <option value="">Select Sex</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <InputError class="mt-2" :message="form.errors.sex" />
+                </div>
+
 
                 <div class="mb-3">
                     <InputLabel for="password" value="Password" />

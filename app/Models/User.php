@@ -22,7 +22,8 @@ class User extends Authenticatable
         'email',
         'password',
         'phone_number',
-        'address',
+        'barangay_id',
+        'street',
         'sex',
     ];
 
@@ -49,5 +50,9 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->is_admin === 1; // Assuming 'is_admin' column is boolean
+    }
+
+    public function barangay(){
+        return $this->belongsTo(Barangay::class);
     }
 }
