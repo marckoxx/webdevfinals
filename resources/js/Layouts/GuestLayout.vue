@@ -6,8 +6,8 @@ const navItems = [
     { label: 'Catalog', route: 'catalog.index' },
     { label: 'Contact', route: 'contact' },
     { label: 'About', route: 'about' },
-    { label: 'Account', route: 'account' },
     { label: 'Login', route: 'login' },
+    { label: 'Sign Up', route: 'register' },
 ];
 </script>
 
@@ -28,7 +28,9 @@ const navItems = [
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li v-for="(item, index) in navItems" :key="index" class="nav-item">
-                            <Link :href="route(item.route)" class="nav-link active" aria-current="page">{{ item.label }}
+                            <Link :href="route(item.route)"
+                                :class="item.label === 'Sign Up' ? 'nav-link active bg-primary text-light px-3 rounded fw-bold' : 'nav-link'">
+                            {{ item.label }}
                             </Link>
                         </li>
                     </ul>
@@ -38,15 +40,4 @@ const navItems = [
     </header>
 
     <slot />
-
-    <div class="b-example-divider"></div>
-    <div class="container">
-        <footer class="py-3 my-4">
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li v-for="(item, index) in navItems" :key="index" class="nav-item">
-                    <Link :href="route(item.route)" class="nav-link px-2 text-body-secondary">{{ item.label }}</Link>
-                </li>
-            </ul>
-            <p class="text-center text-body-secondary">© 2023 Company, Inc</p>
-        </footer>
-    </div></template>
+</template>

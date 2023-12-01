@@ -1,5 +1,11 @@
 <template>
-    <GuestLayout>
+    <Head title="Home" />
+    <template v-if="authUser">
+        <AuthenticatedLayout />
+    </template>
+    <template v-else>
+        <GuestLayout />
+    </template>
         <main>
             <section class="container1">
                 <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
@@ -101,7 +107,8 @@
                                 </div>
                             </div>
                         </div>
-                        <Link :href="route('catalog.index')" type="button" class="btn btn-primary btn-sm " id="btn-show">Show more
+                        <Link :href="route('catalog.index')" type="button" class="btn btn-primary btn-sm " id="btn-show">
+                        Show more
                         </Link>
                     </div>
                 </div>
@@ -173,8 +180,21 @@
                 </div>
             </section>
         </main>
-    </GuestLayout></template>
+    <Footer />
+</template>
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Footer from '@/Layouts/Footer.vue';
+import { ref, defineProps } from 'vue';
+
+const props = defineProps({
+    auth: {
+        type: Object,
+        required: true,
+    },
+});
+
+const authUser = ref(props.auth.user !== null);
 </script>

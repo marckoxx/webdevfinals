@@ -17,9 +17,12 @@ return new class extends Migration
             $table->string('model')->unique();
             $table->unsignedBigInteger('type_id');
             $table->year('year');
-            $table->decimal('daily_rate',10,2);
+            $table->decimal('daily_rate', 10, 2);
             $table->boolean('availability')->default(true);
+            $table->string('image_path')->nullable();
             $table->timestamps();
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
+            $table->foreign('type_id')->references('id')->on('mototypes')->onDelete('cascade');
         });
     }
 
@@ -28,6 +31,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('motorcycles');
+        Schema::table('motorcycles', function () {
+            Schema::dropIfExists('motorcycles');
+        });
     }
 };
