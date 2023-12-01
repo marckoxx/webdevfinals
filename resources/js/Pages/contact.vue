@@ -15,12 +15,11 @@ const props = defineProps({
 const authUser = ref(props.auth.user !== null);
 </script>
 <template>
-
-    <GuestLayout>
+    <GuestLayout />
         <main class="container mb-8">
             <div class="py-5 text-center mb-5">
                 <h2 class=" fw-bold" style="color: #A555EC;">CONTACT US</h2>
-                <h4><i class="fa-solid fa-clock mt-5" ></i> Hours: Monday-Sunday 8:30AM to 8:00PM</h4>
+                <h4><i class="fa-solid fa-clock mt-5"></i> Hours: Monday-Sunday 8:30AM to 8:00PM</h4>
                 <h4><i class="fa-solid fa-address-book"></i> Phone Number: 09123456789 </h4>
             </div>
             <div class="row g-5 d-flex  justify-content-center mb-5">
@@ -88,30 +87,13 @@ const authUser = ref(props.auth.user !== null);
             </div>
 
 
-                <div class="form col-md-6 col-lg-5">
-                    <h4 class="mb-3">Message us</h4>
-                    <form class="needs-validation" novalidate="">
-                        <div class="row g-3">
-                            <div class="col-12">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="enter name" required="">
-                            </div>
-                            <div class="col-12">
-                                <label for="contactno" class="form-label">Contact Number</label>
-                                <input type="number" class="form-control" id="contactno" placeholder="enter name"
-                                    required="">
-                            </div>
-                            <div class="col-12">
-                                <label for="email" class="form-label">Email <span
-                                        class="text-body-secondary">(Optional)</span></label>
-                                <input type="email" class="form-control" id="email" placeholder="you@example.com">
-                            </div>
-
-                            <div class="col-12">
-                                <label for="subject" class="form-label">Subject</label>
-                                <input type="text" class="form-control" id="subject" placeholder="subject" required="">
-                            </div>
-
+            <div class="form col-md-6 col-lg-5">
+                <h4 class="mb-3">Message us</h4>
+                <form class="needs-validation" novalidate="">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="enter name" required="">
                         </div>
                         <div class="col-12">
                             <label for="contactno" class="form-label">Contact Number</label>
@@ -123,64 +105,83 @@ const authUser = ref(props.auth.user !== null);
                             <input type="email" class="form-control" id="email" placeholder="you@example.com">
                         </div>
 
+                        <div class="col-12">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="subject" required="">
+                        </div>
 
-                        <button class="w-100 p-3 fw-bold" type="submit">Submit Form</button>
-                    </form>
-                </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="contactno" class="form-label">Contact Number</label>
+                        <input type="number" class="form-control" id="contactno" placeholder="enter name" required="">
+                    </div>
+                    <div class="col-12">
+                        <label for="email" class="form-label">Email <span
+                                class="text-body-secondary">(Optional)</span></label>
+                        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                    </div>
+
+
+                    <button class="w-100 p-3 fw-bold" type="submit">Submit Form</button>
+                </form>
             </div>
         </main>
 
 
-                    <button class="w-100 btn btn-primary btn-lg" type="submit">Submit Form</button>
-                </form>
-            </div>
-        </div>
-    </main>
-    <Footer />
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Submit Form</button>
+        <Footer />
 </template>
 
 <style scoped>
-.container{
+.container {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 3in;
     background-image: url("images/logo/logo3.png");
 }
-h1{
+
+h1 {
     color: #A555EC;
     font-size: 30px;
 }
-p{
+
+p {
     font-size: 18px;
 }
+
 .form {
     border: 1px solid #A555EC;
-    background-color: rgba(208, 156, 250, 0.5); /* Using rgba to set opacity only for the background */
+    background-color: rgba(208, 156, 250, 0.5);
+    /* Using rgba to set opacity only for the background */
     border-radius: 15px;
     padding: 40px;
 }
-input{
-    background-image: linear-gradient(to bottom right, #FFFFD0 , #FFFFD0) ;
+
+input {
+    background-image: linear-gradient(to bottom right, #FFFFD0, #FFFFD0);
 }
-textarea{
-    background-image: linear-gradient(to bottom right, #FFFFD0 , #FFFFD0) ;
+
+textarea {
+    background-image: linear-gradient(to bottom right, #FFFFD0, #FFFFD0);
 }
-button{
+
+button {
     border-radius: 10px 0 10px 0;
     border: 0;
     color: #A555EC;
-  --c: no-repeat linear-gradient(#FFA1F5 0 0);
-  background:
-    var(--c)  calc(-101% + var(--p,0%)) 100%,
-    var(--c)  calc( 201% - var(--p,0%)) 0;
-  background-size: 50.1% var(--p,.08em);
-  transition: .3s var(--t,0s), background-position .3s calc(.3s - var(--t,0s))
+    --c: no-repeat linear-gradient(#FFA1F5 0 0);
+    background:
+        var(--c) calc(-101% + var(--p, 0%)) 100%,
+        var(--c) calc(201% - var(--p, 0%)) 0;
+    background-size: 50.1% var(--p, .08em);
+    transition: .3s var(--t, 0s), background-position .3s calc(.3s - var(--t, 0s))
 }
+
 button:hover {
-  --p: 101%;
-  --t: 0.3s;
-  color: #A555EC;
- font-weight: 300;
+    --p: 101%;
+    --t: 0.3s;
+    color: #A555EC;
+    font-weight: 300;
 }
 </style>
 <script setup>
