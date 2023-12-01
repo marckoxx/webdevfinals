@@ -1,4 +1,21 @@
+<script setup>
+import { Head, Link, useForm } from '@inertiajs/vue3';
+import GuestLayout from '@/Layouts/GuestLayout.vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Footer from '@/Layouts/Footer.vue';
+import { ref, defineProps } from 'vue';
+
+const props = defineProps({
+    auth: {
+        type: Object,
+        required: true,
+    },
+});
+
+const authUser = ref(props.auth.user !== null);
+</script>
 <template>
+
     <GuestLayout>
         <main class="container mb-8">
             <div class="py-5 text-center mb-5">
@@ -41,6 +58,35 @@
                         </p>
                     </div>
                 </div>
+                <div class="requirements">
+                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Phone</h1>
+                    <p class="col-lg-10 fs-4">Enjoy the independence of driving on your own. Need it on a daily, weekly
+                        or monthly basis? Even long term if you say so!</p>
+                    <ul>
+                        <li> Two (2) valid IDs.</li>
+                        <li> PHP 5,000 Security Deposit. You will provide this when you get the car. This will be given
+                            back to you in full upon returning the car and there are no damages.</li>
+                        <li> Full cash payment upon signing the Contract</li>
+                    </ul>
+                </div>
+                <div class="fee">
+                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Email</h1>
+                    <p class="col-lg-10 fs-4">This is to reserve you the car prior to your arrival. This will be
+                        deducted from your total rental fee.
+                        We will send you the details once you submit your reservation. Reservation fee is
+                        non-refundable.
+                    </p>
+                </div>
+                <div class="fee">
+                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Address</h1>
+                    <p class="col-lg-10 fs-4">This is to reserve you the car prior to your arrival. This will be
+                        deducted from your total rental fee.
+                        We will send you the details once you submit your reservation. Reservation fee is
+                        non-refundable.
+                    </p>
+                </div>
+            </div>
+
 
                 <div class="form col-md-6 col-lg-5">
                     <h4 class="mb-3">Message us</h4>
@@ -65,14 +111,18 @@
                                 <label for="subject" class="form-label">Subject</label>
                                 <input type="text" class="form-control" id="subject" placeholder="subject" required="">
                             </div>
+
                         </div>
-                        <hr class="my-4">
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1"></label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Your Message"></textarea>
+                        <div class="col-12">
+                            <label for="contactno" class="form-label">Contact Number</label>
+                            <input type="number" class="form-control" id="contactno" placeholder="enter name" required="">
                         </div>
-                        <hr class="my-4">
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email <span
+                                    class="text-body-secondary">(Optional)</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                        </div>
+
 
                         <button class="w-100 p-3 fw-bold" type="submit">Submit Form</button>
                     </form>
@@ -80,8 +130,15 @@
             </div>
         </main>
 
-    </GuestLayout>
+
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Submit Form</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <Footer />
 </template>
+
 <style scoped>
 .container{
     background-position: center;
@@ -130,3 +187,4 @@ button:hover {
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 </script>
+

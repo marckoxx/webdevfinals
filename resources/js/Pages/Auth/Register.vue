@@ -11,6 +11,9 @@ const form = useForm({
     email: '',
     password: '',
     password_confirmation: '',
+    phone_number: '',
+    address: '',
+    sex: '',
 });
 
 const submit = () => {
@@ -22,82 +25,84 @@ const submit = () => {
 
 <template>
     <GuestLayout>
-        <Head title="Register" />
+        <div class="container">
 
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="name" value="Name" />
+            <Head title="Register" />
 
-                <TextInput
-                    id="name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    v-model="form.name"
-                    required
-                    autofocus
-                    autocomplete="name"
-                />
+            <form @submit.prevent="submit">
+                <div class="mb-3">
+                    <InputLabel for="name" value="Name" />
+                    <TextInput id="name" type="text" class="form-control mt-1" v-model="form.name" required autofocus
+                        autocomplete="name" />
+                    <InputError class="mt-2" :message="form.errors.name" />
+                </div>
 
-                <InputError class="mt-2" :message="form.errors.name" />
-            </div>
+                <div class="mb-3">
+                    <InputLabel for="email" value="Email" />
+                    <TextInput id="email" type="email" class="form-control mt-1" v-model="form.email" required
+                        autocomplete="username" />
+                    <InputError class="mt-2" :message="form.errors.email" />
+                </div>
 
-            <div class="mt-4">
-                <InputLabel for="email" value="Email" />
+                <div class="mb-3">
+                    <InputLabel for="phone_number" value="Phone Number" />
+                    <TextInput id="phone_number" type="tel" class="form-control mt-1" v-model="form.phone_number" required
+                        autocomplete="tel" />
+                    <InputError class="mt-2" :message="form.errors.phone_number" />
+                </div>
 
-                <TextInput
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autocomplete="username"
-                />
+                <div class="mb-3">
+                    <InputLabel for="address" value="Address" />
+                    <TextInput id="address" type="text" class="form-control mt-1" v-model="form.address" required
+                        autocomplete="address" />
+                    <InputError class="mt-2" :message="form.errors.address" />
+                </div>
 
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
+                <div class="mb-3">
+                    <InputLabel for="sex">Sex</InputLabel>
+                    <div class="form-check">
+                        <input id="male" type="radio" class="form-check-input" value="male" v-model="form.sex">
+                        <label for="male" class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input id="female" type="radio" class="form-check-input" value="female" v-model="form.sex">
+                        <label for="female" class="form-check-label">Female</label>
+                    </div>
+                    <div class="form-check">
+                        <input id="other" type="radio" class="form-check-input" value="other" v-model="form.sex">
+                        <label for="other" class="form-check-label">Other</label>
+                    </div>
+                    <p v-if="form.errors.sex" class="mt-2 text-danger"></p>
+                </div>
 
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+                <div class="mb-3">
+                    <InputLabel for="password" value="Password" />
 
-                <TextInput
-                    id="password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password"
-                    required
-                    autocomplete="new-password"
-                />
+                    <TextInput id="password" type="password" class="form-control mt-1" v-model="form.password" required
+                        autocomplete="new-password" />
 
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
+                    <InputError class="mt-2" :message="form.errors.password" />
+                </div>
 
-            <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
+                <div class="mb-3">
+                    <InputLabel for="password_confirmation" value="Confirm Password" />
 
-                <TextInput
-                    id="password_confirmation"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password_confirmation"
-                    required
-                    autocomplete="new-password"
-                />
+                    <TextInput id="password_confirmation" type="password" class="form-control mt-1"
+                        v-model="form.password_confirmation" required autocomplete="new-password" />
 
-                <InputError class="mt-2" :message="form.errors.password_confirmation" />
-            </div>
+                    <InputError class="mt-2" :message="form.errors.password_confirmation" />
+                </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <Link
-                    :href="route('login')"
-                    class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                >
+                <div class="d-flex justify-content-end mt-4">
+                    <Link :href="route('login')" class="text-muted text-sm">
                     Already registered?
-                </Link>
+                    </Link>
 
-                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Register
-                </PrimaryButton>
-            </div>
-        </form>
+                    <PrimaryButton class="ms-4" :class="{ 'disabled': form.processing }" :disabled="form.processing">
+                        Register
+                    </PrimaryButton>
+                </div>
+            </form>
+        </div>
     </GuestLayout>
 </template>

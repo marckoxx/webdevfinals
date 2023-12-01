@@ -1,25 +1,29 @@
 <script setup>
 import { Head, Link, useForm, router } from '@inertiajs/vue3';
-import { defineProps } from 'vue';
+import { ref, defineProps } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Footer from '@/Layouts/Footer.vue';
 
 const props = defineProps({
+    auth: {
+        type: Object,
+        required: true,
+    },
     motorcycle: Object,
 });
+
+const authUser = ref(props.auth.user !== null);
 
 const getImagePath = (motor) => {
     // Replace 'image_path' with the actual field name storing the image path
     return motor.image_path ? `${window.location.origin}/${motor.image_path}` : ''; // Generate the full image URL
 };
 
-function reserveMotorcycle() {
-    // Implement the logic for reserving the motorcycle
-    // You can use Inertia.js or make an API call here
-    // For example: router.post('/reserve', { motorcycleId: motorcycle.id })
-}
 </script>
 
 <template>
+
     <GuestLayout>
         <div class="container my-4">
             <Link class="btn btn-dark" :href="route('catalog.index')">
@@ -51,4 +55,5 @@ function reserveMotorcycle() {
                 </div>
             </div>
     </GuestLayout>
+
 </template>

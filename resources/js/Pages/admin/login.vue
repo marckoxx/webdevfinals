@@ -33,7 +33,7 @@ const submit = () => {
     <GuestLayout>
         <div class="container">
 
-            <Head title="Log in" />
+            <Head title="Admin Log in" />
 
             <div v-if="status" class="mb-4 font-medium text-sm text-success">
                 <!-- Bootstrap does not have a direct equivalent to Tailwind's text-green-600. You may adjust the color using Bootstrap classes or inline styles. -->

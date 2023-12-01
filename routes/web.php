@@ -1,14 +1,15 @@
 <?php
 
+use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\CatalogController;
-use App\Http\Controllers\MotorcycleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShowcaseController;
-use App\Http\Controllers\TestController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use App\Http\Controllers\MotorcycleController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,33 +26,38 @@ Route::get('/', function () {
     return Inertia::render('index');
 })->name('index');
 
-Route::get('/about', function(){
+Route::get('/about', function () {
     return Inertia::render('about');
 })->name('about');
 
-Route::get('/contact', function(){
+Route::get('/contact', function () {
     return Inertia::render('contact');
 })->name('contact');
 
-Route::get('/account', function(){
+Route::get('/account', function () {
     return Inertia::render('account');
-})->name('account');
+})->middleware(['auth', 'verified'])->name('account');
 
-Route::get('/login', function(){
-    return Inertia::render('login');
+Route::get('/login', function () {
+    return Inertia::render('Auth/login');
 })->name('login');
 
-Route::resource('/catalog',CatalogController::class);
+Route::redirect('/admin', '/admin/dashboard', 301);
+
+Route::middleware('guest')->get('/admin/login', function () {
+    return Inertia::render('admin/login');
+})->name('adminLogin');
+
+Route::get('/register', [RegisteredUserController::class, 'create'])
+    ->name('register');
+
+Route::resource('/catalog', CatalogController::class);
 
 Route::resource('/motorcycle', ShowcaseController::class);
 
-Route::resource('/brands',BrandsController::class);
+Route::resource('/brands', BrandsController::class);
 
-Route::resource('/motorcycles',MotorcycleController::class);
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::resource('/motorcycles', MotorcycleController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -59,6 +65,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware('adminAuth')->group(function () {
+    Route::get('/admin/dashboard', function () {
+        return Inertia::render('admin/dashboard');
+    })->name('admindash');
+});
 
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

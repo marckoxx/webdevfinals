@@ -1,13 +1,22 @@
 <script setup>
 import { Head, Link, router } from '@inertiajs/vue3';
-import { ref, watch } from 'vue';
+import { ref, watch, defineProps } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue'
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Footer from '@/Layouts/Footer.vue';
 
 const props = defineProps(
     {
-        motorcycles: Object
+        auth: {
+            type: Object,
+            required: true,
+        },
+        motorcycles: Object,
     }
 )
+
+const authUser = ref(props.auth.user !== null);
+
 
 let search = ref('');
 
@@ -26,11 +35,18 @@ const getImagePath = (motor) => {
 </script>
 
 <template>
-    <GuestLayout>
-        <main class="bg">
-        <div class="container my-4">
 
-            <Head title="Index of Motorcycles" />
+    <template v-if="authUser">
+        <AuthenticatedLayout />
+    </template>
+    <template v-else>
+        <GuestLayout />
+    </template>
+    <div class="container my-4">
+
+
+        <Head title="Index of Motorcycles" />
+
 
             <section class=" text-center container">
                 <div class="row my-5">
@@ -102,23 +118,23 @@ const getImagePath = (motor) => {
                                     </Link>
                                 </div>
 
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </template>
+            <nav aria-label="Pagination">
+                <ul class="pagination">
+                    <li v-for="link in motorcycles.links" :key="link.url" :class="['page-item', { 'active': link.active }]">
+                        <Link :href="link.url" class="page-link" v-html="link.label" />
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </template>
-    <div v-if="motorcycles.links">
-        <Link class="btn-3" style="text-decoration: none; color: black;" v-for="link in motorcycles.links" :key="link.url" :href="link.url">
-            {{ link.label }}
-        </Link>
-    </div>
-    </div>
 
     </div>
-</main>
-    </GuestLayout>
+    <Footer />
 </template>
 <style scoped>
 

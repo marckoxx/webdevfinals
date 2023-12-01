@@ -1,37 +1,53 @@
 <template>
-    <GuestLayout>
-        <main class="about-section">
-            <section class="container my-4">
-                <div class="about-content text-center my-5">
-                    <h1>About MotoRent</h1>
-                    <p>
-                        Welcome to MotoRent, your go-to destination for motorcycle rentals and unforgettable adventures! We
-                        offer a diverse fleet of well-maintained motorcycles, perfect for riders of all levels and group
-                        sizes. Safety is our priority. Our motorcycles are regularly serviced and meticulously cleaned to
-                        ensure your peace of mind on the road.
-                    </p>
-                    <!-- Add the rest of your content -->
-                </div>
+    <template v-if="authUser">
+        <AuthenticatedLayout />
+    </template>
+    <template v-else>
+        <GuestLayout />
+    </template>
+    <main class="about-section" style="margin-top: 80px;">
+        <section class="container my-4">
+            <div class="about-content text-center">
+                <h1>About MotoRent</h1>
+                <p>
+                    Welcome to MotoRent, your go-to destination for motorcycle rentals and unforgettable adventures! We
+                    offer a diverse fleet of well-maintained motorcycles, perfect for riders of all levels and group
+                    sizes. Safety is our priority. Our motorcycles are regularly serviced and meticulously cleaned to
+                    ensure your peace of mind on the road.
+                </p>
+                <!-- Add the rest of your content -->
+            </div>
 
-                <hr class="featurette-divider my-5">
-
-                <div v-for="(feature, index) in features" :key="index" class="row featurette">
-                    <div :class="['col-md-7', index % 2 === 0 ? '' : 'order-md-2']">
-                        <h2 class="featurette-heading fw-normal lh-1">{{ feature.title }}</h2>
-                        <p class="lead">{{ feature.content }}</p>
-                    </div>
-                    <div :class="['col-md-5', index % 2 === 0 ? '' : 'order-md-1']">
-                        <img :src="feature.image" :alt="feature.alt" class="featurette-image img-fluid mx-auto" width="500"
-                            height="500">
-                    </div>
+            <hr class="featurette-divider">
+            <div v-for="(feature, index) in features" :key="index" class="row featurette">
+                <div :class="['col-md-7', index % 2 === 0 ? '' : 'order-md-2']">
+                    <h2 class="featurette-heading fw-normal lh-1">{{ feature.title }}</h2>
+                    <p class="lead">{{ feature.content }}</p>
                 </div>
-            </section>
-        </main>
-    </GuestLayout>
+                <div :class="['col-md-5', index % 2 === 0 ? '' : 'order-md-1']">
+                    <img :src="feature.image" :alt="feature.alt" class="featurette-image img-fluid mx-auto" width="500"
+                        height="500">
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
 </template>
 
 <script setup>
 import GuestLayout from '@/Layouts/GuestLayout.vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Footer from '@/Layouts/Footer.vue';
+import { ref, defineProps } from 'vue';
+
+const props = defineProps({
+    auth: {
+        type: Object,
+        required: true,
+    },
+});
+
+const authUser = ref(props.auth.user !== null);
 
 const features = [
     {

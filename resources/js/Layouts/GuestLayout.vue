@@ -6,8 +6,8 @@ const navItems = [
     { label: 'Catalog', route: 'catalog.index' },
     { label: 'Contact', route: 'contact' },
     { label: 'About', route: 'about' },
-    { label: 'Account', route: 'account' },
     { label: 'Login', route: 'login' },
+    { label: 'Sign Up', route: 'register' },
 ];
 </script>
 
@@ -27,8 +27,12 @@ const navItems = [
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li v-for="(item, index) in navItems" :key="index" class="navmenu-item">
-                            <Link :href="route(item.route)" class="nav-link active" aria-current="page">{{ item.label }}
+
+                        <li v-for="(item, index) in navItems" :key="index" class="nav-item">
+                            <Link :href="route(item.route)"
+                                :class="item.label === 'Sign Up' ? 'nav-link active bg-primary text-light px-3 rounded fw-bold' : 'nav-link'">
+                            {{ item.label }}
+
                             </Link>
                         </li>
                     </ul>
@@ -38,6 +42,7 @@ const navItems = [
     </header>
 
     <slot />
+
 
     <section class="footer pt-15 ">
             <div class="container">
@@ -104,3 +109,4 @@ const navItems = [
 }
 
 </style>
+
