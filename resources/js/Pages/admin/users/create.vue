@@ -13,12 +13,13 @@ const props = defineProps(
 
 const form = useForm({
     name: '',
+    password: '',
+    password_confirmation: '',
     email: '',
     phone_number: '',
     barangay_id: '',
     street: '',
     sex: '',
-    is_admin: null,
 });
 
 const submitForm = () => {
@@ -29,6 +30,7 @@ const submitForm = () => {
         onError: (errors) => {
             // Handle errors if needed
         },
+        onFinish: () => form.reset('password', 'password_confirmation'),
     });
 };
 
@@ -43,7 +45,6 @@ const submitForm = () => {
             <div>
                 <label for="name">Name</label>
                 <input class="form-control" type="text" name="name" id="name" v-model="form.name">
-
             </div>
             <div>
                 <label for="email">Email</label>
@@ -57,6 +58,7 @@ const submitForm = () => {
             <div>
                 <label for="barangay_id">Barangay</label>
                 <select class="form-control" name="barangay_id" id="barangay_id" v-model="form.barangay_id">
+                    <option value="">Select Barangay</option>
                     <option v-for="barangay in barangays" :key="barangay.id" :value="barangay.id">{{ barangay.name }}
                     </option>
                 </select>
@@ -77,11 +79,16 @@ const submitForm = () => {
                 <InputError class="mt-2" :message="form.errors.sex" />
             </div>
             <div>
-                <label for="is_admin">UserType</label>
-                <select class="form-control" name="is_admin" id="is_admin" v-model="form.is_admin">
-                    <option value="1">Admin</option>
-                    <option value="0">User</option>
-                </select>
+                <label for="password">Password</label>
+                <input id="password" type="password" class="form-control" v-model="form.password" required
+                    autocomplete="new-password" />
+                <InputError class="mt-2" :message="form.errors.password" />
+            </div>
+            <div>
+                <label for="password_confirmation">Confirm Password</label>
+                <input id="password_confirmation" type="password" class="form-control" v-model="form.password" required
+                    autocomplete="new-password" />
+                <InputError class="mt-2" :message="form.errors.password_confirmation" />
             </div>
             <button class="btn btn-primary" type="submit" :disabled="form.processing">
                 Create

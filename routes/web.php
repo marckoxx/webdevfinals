@@ -72,6 +72,7 @@ Route::middleware('adminAuth')->group(function () {
     Route::resource('/admin/brands', BrandsController::class);
     Route::resource('/admin/types', MototypesController::class);
     Route::resource('/admin/users', UserController::class);
+    
     Route::get('/admin/management', function () {
         return Inertia::render('admin/management');
     })->name('management');

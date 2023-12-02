@@ -1,61 +1,82 @@
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
-import GuestLayout from '@/Layouts/GuestLayout.vue';
+import GuestLayout from '@/Layouts/GuestLayout.vue'
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
 import Layout from '@/Layouts/Layout.vue';
 import Footer from '@/Layouts/Footer.vue';
 
-const props = defineProps({
-    motorcycle: Object,
-    brands: Array,
-    types: Array,
-});
+const props = defineProps(
+    {
+        user: Object,
+        barangays: Array,
+    }
+)
 
-const form = useForm(props.motorcycle);
+const form = useForm(props.user);
+
+const submitForm = () => {
+    form.put(route('users.update', form.id), {
+        onSuccess: () => {
+            // Handle success if needed
+        },
+        onError: (errors) => {
+            // Handle errors if needed
+        },
+        onFinish: () => form.reset('password'),
+    });
+};
+
 </script>
 
 <template>
     <Layout />
-        <Head title="Edit a Motorcycle" />
-        <form class="container" action="" @submit.prevent="form.put(route('motorcycles.update', form.id))">
+
+    <Head title="Add a User" />
+    <div class="container">
+        <form action="" @submit.prevent="submitForm" enctype="multipart/form-data">
             <div>
-                <label for="brand_id">Brand</label>
-                <select class="form-control" name="brand_id" id="brand_id" v-model="form.brand_id">
-                    <option v-for="brand in brands" :key="brand.id" :value="brand.id">{{ brand.name }}</option>
+                <label for="name">Name</label>
+                <input class="form-control" type="text" name="name" id="name" v-model="form.name">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input class="form-control" type="email" name="email" id="email" v-model="form.email" />
+            </div>
+            <div>
+                <label for="phone_number">Phone Number</label>
+                <input class="form-control" type="numeric" name="phone_number" id="phone_number"
+                    v-model="form.phone_number" />
+            </div>
+            <div>
+                <label for="barangay_id">Barangay</label>
+                <select class="form-control" name="barangay_id" id="barangay_id" v-model="form.barangay_id">
+                    <option value="">Select Barangay</option>
+                    <option v-for="barangay in barangays" :key="barangay.id" :value="barangay.id">{{ barangay.name }}
+                    </option>
                 </select>
             </div>
             <div>
-                <label for="model">Model</label>
-                <input class="form-control" type="text" name="model" id="model" v-model="form.model"
-                    placeholder="Click 125">
-            </div>
-            <div>
-                <label for="type_id">Type</label>
-                <select class="form-control" name="type_id" id="type_id" v-model="form.type_id">
-                    <option v-for="mototype in types" :key="mototype.id" :value="mototype.id">{{ mototype.name }}</option>
-                </select>
-            </div>
-            <div>
-                <label for="year">Year</label>
-                <input class="form-control" type="number" name="year" id="year" v-model="form.year"
-                    placeholder="2002">
-            </div>
-            <div>
-                <label for="daily_rate">Daily Rate</label>
-                <input class="form-control" type="number" name="daily_rate" id="daily_rate" v-model="form.daily_rate"
+                <label for="street">Street</label>
+                <input class="form-control" type="text" name="street" id="street" v-model="form.street"
                     placeholder="499.00">
             </div>
             <div>
-                <label for="availability">Availability</label>
-                <select class="form-control" name="availability" id="availability" v-model="form.availability">
-                    <option value="1">Available</option>
-                    <option value="0">Not Available</option>
+                <label for="sex">Sex</label>
+                <select id="sex" name="sex" class="form-control" v-model="form.sex" required>
+                    <option value="">Select Sex</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
                 </select>
+                <InputError class="mt-2" :message="form.errors.sex" />
             </div>
             <button class="btn btn-primary" type="submit" :disabled="form.processing">
                 Update
             </button>
-            <Link :href="route('motorcycles.index')" class="btn">Go Back</Link>
+            <Link :href="route('users.index')" class="btn">Go Back</Link>
         </form>
+    </div>
     <Footer />
 </template>
+
+
