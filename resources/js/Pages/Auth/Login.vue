@@ -31,90 +31,74 @@ const submit = () => {
 
 <template>
     <GuestLayout>
-        <div class="container">
-
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-            {{ status }}
-        </div>
-        <div class=" row mx-5 g-lg-5 py-5">
-            <div class="img-cont col-lg-7 text-center text-lg-start">
-                <img src="images/logo/logo3.png" alt="" class="img-fluid">
+        <main>
+      <div class="mx-5 row   g-lg-5 py-5" style="display: flex; align-items:center; justify-content:center; justify-content: space-around;">
+            <div class="img-cont col-md-6 col-lg-5">
+            <img src="images/logo/logo3.png" alt="" class="img-fluid">
             </div>
-            <div class="form col-md-6 col-lg-5">
-                <div class="d-flex justify-content-center">
-                    <ul class="nav mb-3" id="loginSignupTabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="login-tab" data-bs-toggle="pill" href="#login" role="tab"
-                                aria-controls="login" aria-selected="true">Login</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="signup-tab" data-bs-toggle="pill" href="#signup" role="tab"
-                                aria-controls="signup" aria-selected="false">Sign Up</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="tab-content" id="loginSignupTabContent">
-                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                        <form  class="p-4 p-md-5 border rounded-3" @submit.prevent="submit" >
-                            <!--email-->
-                            <div class="form-floating mb-3">
+            <div class="forms col-md-6 col-lg-5">
+                <h1 class="d-flex align-items-center justify-content-center fw-bold " >Log In</h1>
+            <div class="tab-content " id="loginSignupTabContent">
+                <!-- Login Tab Content -->
+                <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                    <form  class="p-4 p-md-5 border rounded-3" @submit.prevent="submit" >
+                    <div class="form-floating mb-5">
+                                <div class="mb-3">
+                                    <InputLabel for="email" value="Email" />
+                                </div>
                                 <TextInput
                                     id="email"
                                     type="email"
-                                    class="form-control"
+                                    class="form-control p-0 px-4"
                                     v-model="form.email"
                                     required
                                     autofocus
-                                    autocomplete="username"
-                                />
-                                <InputLabel for="email" value="Email" />
+                                    autocomplete="username"/>
+
                                 <div class="mt-2">
                                 <InputError class="mt-2" :message="form.errors.email" />
                                 </div>
                             </div>
-                            <!--password-->
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-5">
+                                <div class="mb-3">
+                                    <InputLabel for="password" value="Password" />
+                                </div>
                                 <TextInput
                                     id="password"
                                     type="password"
-                                    class="form-control"
+                                    class="form-control  p-0 px-4"
                                     v-model="form.password"
                                     required
                                     autocomplete="current-password"
                                 />
-                                <InputLabel for="password" value="Password" />
                                 <div class="mt-2">
                                     <InputError class="mt-2" :message="form.errors.password" />
                                 </div>
                             </div>
-                        <div class="block mt-4">
-                            <label class="flex items-center">
-                                <Checkbox name="remember" v-model:checked="form.remember" />
-                                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
-                            </label>
-                        </div>
-                    <div class="mb-3 form-check">
-                        <label class="form-check-label">
-                            <Checkbox name="remember" v-model:checked="form.remember" class="form-check-input" />
-                            <span class="ms-2 text-sm text-muted">Remember me</span>
-                        </label>
-                    </div>
+                            <div class="block mt-4">
+                                <label class="flex items-center mb-3">
+                                    <Checkbox name="remember" v-model:checked="form.remember" />
+                                    <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-end mb-3">
+                                <Button class="btn w-100" style="font-weight: bold;" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                                    Log in
+                                </Button>
+                            </div>
+                            <Link
+                                v-if="canResetPassword"
+                                :href="route('password.request')"
+                                class="text">
+                                Forgot your password?
+                            </Link>
+                  </form>
+                </div>
 
-                    <div class="d-flex justify-content-end mt-4">
-                        <Link v-if="canResetPassword" :href="route('password.request')" class="text-muted text-sm">
-                        Forgot your password?
-                        </Link>
-
-                        <PrimaryButton class="ms-4" :class="{ 'disabled': form.processing }" :disabled="form.processing">
-                            Log in
-                        </PrimaryButton>
-                    </div>
-                </form>
+              </div>
             </div>
-        </div>
-        </div>
-    </div>
+          </div>
+    </main>
 
     </GuestLayout>
 </template>
@@ -137,29 +121,15 @@ const submit = () => {
     color: #FFFFD0;
     font-weight: 300;
 }
-
-.form {
+.forms {
     height: 40em;
     border: 1px solid #A555EC;
     background-color: rgba(208, 156, 250, 0.5);
     /* Using rgba to set opacity only for the background */
-    border-radius: 15px;
-    padding: 40px;
+    border-radius: 30px;
+    padding: 30px;
 }
-
-#loginSignupTabs .nav-link {
-    color: black;
-    /* Change to the desired text color */
-    border-color: gray;
-    /* Change to the desired border color */
-    transition: background-color 0.3s ease;
-    /* Add a smooth transition effect */
+.form-control{
+    border-radius: 40px;
 }
-
-
-#loginSignupTabs .nav-link.active {
-    border-bottom: 3px solid;
-    color: #A555EC;
-    /* Change to the desired text color for active tab */
-}</style>
-
+</style>
