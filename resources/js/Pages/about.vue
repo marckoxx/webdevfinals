@@ -88,4 +88,17 @@ const features = [
 .featurette-image {
     /* Your styles */
 }
+img {
+    height: auto;
+    transition: 1s ease;
+    border-radius: 20px 0 20px 0;
+}
+
+img:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 1s ease;
+    transition: 1s ease;
+}
 </style>
