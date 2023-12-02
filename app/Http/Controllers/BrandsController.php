@@ -16,14 +16,14 @@ class BrandsController extends Controller
             return $query->where('name', 'like', '%' . $search . '%');
         })->get();
 
-        return inertia('brands/index', [
+        return inertia('admin/brands/index', [
             'brands' => $brands,
         ]);
     }
 
     public function create()
     {
-        return inertia('brands/create');
+        return inertia('admin/brands/create');
     }
 
     public function store(Request $request)
@@ -36,7 +36,7 @@ class BrandsController extends Controller
 
     public function edit(Brands $brand)
     {
-        return inertia('brands/edit', compact('brand'));
+        return inertia('admin/brands/edit', compact('brand'));
     }
 
     public function update(Request $request, Brands $brand)

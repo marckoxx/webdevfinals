@@ -1,6 +1,9 @@
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Layout from '@/Layouts/Layout.vue';
+import Footer from '@/Layouts/Footer.vue';
 
 const props = defineProps({
     motorcycle: Object,
@@ -12,7 +15,7 @@ const form = useForm(props.motorcycle);
 </script>
 
 <template>
-    <GuestLayout>
+    <Layout />
         <Head title="Edit a Motorcycle" />
         <form class="container" action="" @submit.prevent="form.put(route('motorcycles.update', form.id))">
             <div>
@@ -54,5 +57,5 @@ const form = useForm(props.motorcycle);
             </button>
             <Link :href="route('motorcycles.index')" class="btn">Go Back</Link>
         </form>
-    </GuestLayout>
+    <Footer />
 </template>

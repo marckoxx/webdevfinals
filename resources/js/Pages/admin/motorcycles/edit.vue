@@ -1,47 +1,23 @@
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
-import GuestLayout from '@/Layouts/GuestLayout.vue'
+import GuestLayout from '@/Layouts/GuestLayout.vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Layout from '@/Layouts/Layout.vue';
+import Footer from '@/Layouts/Footer.vue';
 
-const props = defineProps(
-    {
-        motorcycles: Object,
-        brands: Array,
-        types: Array,
-    }
-)
-
-const form = useForm({
-    brand_id: '',
-    model: '',
-    type_id: '',
-    year: '',
-    daily_rate: '',
-    availability: '',
-    image: null,
+const props = defineProps({
+    motorcycle: Object,
+    brands: Array,
+    types: Array,
 });
 
-const onFileChange = (event) => {
-    form.image = event.target.files[0];
-};
-
-const submitForm = () => {
-    form.post(route('motorcycles.store'), {
-        onSuccess: () => {
-            // Handle success if needed
-        },
-        onError: (errors) => {
-            // Handle errors if needed
-        },
-    });
-};
-
+const form = useForm(props.motorcycle);
 </script>
 
 <template>
-    <GuestLayout>
-
-        <Head title="Add a Motorcycle" />
-        <form action="" @submit.prevent="submitForm" enctype="multipart/form-data">
+    <Layout />
+        <Head title="Edit a Motorcycle" />
+        <form class="container" action="" @submit.prevent="form.put(route('motorcycles.update', form.id))">
             <div>
                 <label for="brand_id">Brand</label>
                 <select class="form-control" name="brand_id" id="brand_id" v-model="form.brand_id">
@@ -61,7 +37,8 @@ const submitForm = () => {
             </div>
             <div>
                 <label for="year">Year</label>
-                <input class="form-control" type="number" name="year" id="year" v-model="form.year" placeholder="2002">
+                <input class="form-control" type="number" name="year" id="year" v-model="form.year"
+                    placeholder="2002">
             </div>
             <div>
                 <label for="daily_rate">Daily Rate</label>
@@ -75,16 +52,10 @@ const submitForm = () => {
                     <option value="0">Not Available</option>
                 </select>
             </div>
-            <div>
-                <label for="image">Image</label>
-                <input type="file" name="image" id="image" @change="onFileChange">
-            </div>
-            <button type="submit" :disabled="form.processing">
-                Create
+            <button class="btn btn-primary" type="submit" :disabled="form.processing">
+                Update
             </button>
-            <Link :href="route('motorcycles.index')">Go Back</Link>
+            <Link :href="route('motorcycles.index')" class="btn">Go Back</Link>
         </form>
-    </GuestLayout>
+    <Footer />
 </template>
-
-

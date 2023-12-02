@@ -1,7 +1,10 @@
 <script setup>
 import { Head, Link, useForm, router } from '@inertiajs/vue3';
 import { ref, watch } from 'vue';
-import GuestLayout from '@/Layouts/GuestLayout.vue'
+import GuestLayout from '@/Layouts/GuestLayout.vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Layout from '@/Layouts/Layout.vue';
+import Footer from '@/Layouts/Footer.vue';
 
 const props = defineProps(
     {
@@ -34,7 +37,7 @@ const getImagePath = (motor) => {
 </script>
 
 <template>
-    <GuestLayout>
+    <Layout />
         <div class="container my-4">
 
             <Head title="Index of Motorcycles" />
@@ -84,7 +87,7 @@ const getImagePath = (motor) => {
                 </tbody>
             </table>
         </div>
-    </GuestLayout>
+    <Footer />
 </template>
 
 

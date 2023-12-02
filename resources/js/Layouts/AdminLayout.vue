@@ -4,9 +4,7 @@ import { Link, usePage } from '@inertiajs/vue3';
 
 const navItems = [
     { label: 'Dashboard', route: 'dashboard.index' },
-    { label: 'Catalog', route: 'catalog.index' },
-    { label: 'Contact Us', route: 'contact' },
-    { label: 'About', route: 'about' },
+    { label: 'Management', route: 'management' },
 ];
 const { url, component } = usePage();
 
@@ -17,15 +15,13 @@ const refreshPage = () => {
     }
 };
 const { props } = usePage();
-
-console.log(props.auth.user.is_admin);
 </script>
 
 <template>
     <header>
         <nav class="navbar navbar-expand-md bg-body-tertiary">
             <div class="container-fluid">
-                <Link class="navbar-brand d-flex align-items-center" :href="route('index')">
+                <Link class="navbar-brand d-flex align-items-center" :href="route('dashboard.index')">
                 <img class="rounded mr-1" :src="'/images/logo/logo3.png'" alt="Company Logo"
                     style="width: 37px; height: 37px;">
                 MotoRent

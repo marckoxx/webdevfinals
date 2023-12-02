@@ -1,7 +1,9 @@
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import GuestLayout from '@/Layouts/GuestLayout.vue'
-
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Layout from '@/Layouts/Layout.vue';
+import Footer from '@/Layouts/Footer.vue';
 const props = defineProps(
     {
         brands: Object
@@ -14,7 +16,7 @@ const form = useForm({
 </script>
 
 <template>
-    <GuestLayout>
+    <Layout />
         <Head title="Add a Brand" />
         <form action="" @submit.prevent="form.post(route('brands.store'))">
             <div>
@@ -27,7 +29,7 @@ const form = useForm({
             </button>
             <Link :href="route('brands.index')">Go Back</Link>
         </form>
-    </GuestLayout>
+    <Footer />
 </template>
 
 

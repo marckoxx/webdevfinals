@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\UserController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
@@ -11,6 +12,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShowcaseController;
 use App\Http\Controllers\MotorcycleController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\MototypesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,9 +58,7 @@ Route::resource('/catalog', CatalogController::class);
 
 Route::resource('/motorcycle', ShowcaseController::class);
 
-Route::resource('/brands', BrandsController::class);
 
-Route::resource('/motorcycles', MotorcycleController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -68,6 +68,13 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('adminAuth')->group(function () {
     Route::resource('/admin/dashboard', AdminDashboardController::class);
+    Route::resource('/admin/motorcycles', MotorcycleController::class);
+    Route::resource('/admin/brands', BrandsController::class);
+    Route::resource('/admin/types', MototypesController::class);
+    Route::resource('/admin/users', UserController::class);
+    Route::get('/admin/management', function () {
+        return Inertia::render('admin/management');
+    })->name('management');
 });
 
 require __DIR__ . '/auth.php';

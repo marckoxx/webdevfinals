@@ -40,6 +40,21 @@
                             </a>
                         </li>
                     </ul>
+                    <h5>MANAGEMENT</h5>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="rentalmanagement.html" class="nav-link active" aria-current="paddress">
+                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                            Rental Management
+                        </a>
+                    </li>
+                    <li>
+                        <a href="usermanagement.html" class="nav-link link-body-emphasis">
+                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                            User Management
+                        </a>
+                    </li>
+                </ul>
                 </div>
 
                 <div class=" mt-4 col-lg-9 mb-2 mb-xl-3">
