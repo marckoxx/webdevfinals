@@ -16,7 +16,7 @@ const form = useForm(props.type);
 
 <template>
     <Layout />
-        <Head title="Edit a Brand" />
+        <Head title="Edit a Type" />
         <form action="" @submit.prevent="form.put(route('types.update', form.id))">
             <div>
                 <label for="mototype">Type</label>
@@ -25,7 +25,7 @@ const form = useForm(props.type);
             <button type="submit" :disabled="form.processing">
                 Update
             </button>
-            <Link :href="route('brands.index')">Go Back</Link>
+            <Link :href="route('types.index')">Go Back</Link>
         </form>
     <Footer />
 </template>

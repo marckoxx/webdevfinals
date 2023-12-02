@@ -16,6 +16,7 @@ const form = useForm(props.brand);
 
 <template>
     <Layout />
+    <div class="container">
         <Head title="Edit a Brand" />
         <form action="" @submit.prevent="form.put(route('brands.update', form.id))">
             <div>
@@ -28,5 +29,6 @@ const form = useForm(props.brand);
             </button>
             <Link :href="route('brands.index')">Go Back</Link>
         </form>
+    </div>
     <Footer />
 </template>
