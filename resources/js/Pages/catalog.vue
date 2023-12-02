@@ -4,6 +4,7 @@ import { ref, watch, defineProps } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue'
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
 import Footer from '@/Layouts/Footer.vue';
+import Layout from '@/Layouts/Layout.vue';
 
 const props = defineProps(
     {
@@ -35,12 +36,7 @@ const getImagePath = (motor) => {
 </script>
 
 <template>
-    <template v-if="authUser">
-        <AuthenticatedLayout />
-    </template>
-    <template v-else>
-        <GuestLayout />
-    </template>
+    <Layout />
     <div class="container my-4">
 
 

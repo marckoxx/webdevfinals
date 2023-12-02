@@ -4,6 +4,7 @@ import { ref, defineProps } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
 import Footer from '@/Layouts/Footer.vue';
+import Layout from '@/Layouts/Layout.vue';
 
 const props = defineProps({
     auth: {
@@ -24,7 +25,7 @@ const getImagePath = (motor) => {
 
 <template>
 
-    <GuestLayout>
+    <Layout />
         <div class="container my-4">
             <Link class="btn btn-dark" :href="route('catalog.index')">
                 Go Back
@@ -117,7 +118,7 @@ const getImagePath = (motor) => {
                 </div>
 
 
-    </GuestLayout>
+    <Footer />
 
 </template>
 <style scoped>
