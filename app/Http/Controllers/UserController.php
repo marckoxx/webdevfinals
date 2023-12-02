@@ -43,7 +43,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|lowercase|email|max:255|unique:' . User::class,
-            'password' => ['required', 'confirmed', Password::defaults()],
+            'password' => 'required',
             'phone_number' => 'nullable|string|max:20', // Making phone_number nullable
             'street' => 'required|string|max:255',
             'sex' => 'required|in:male,female,other',
@@ -77,16 +77,32 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
-        $user->update([
-            'brand_id' => $request->brand_id,
-            'model' => $request->model,
-            'type_id' => $request->type_id,
-            'year' => $request->year,
-            'daily_rate' => $request->daily_rate,
-            'availability' => $request->availability,
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|lowercase|email|max:255|unique:users,email,' . $user->id,
+            'street' => 'required|string|max:255',
+            'sex' => 'required|in:male,female,other',
+            'barangay_id' => 'required|exists:barangays,id'
         ]);
+
+        $userData = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'street' => $request->street,
+            'barangay_id' => $request->barangay_id,
+            'sex' => $request->sex,
+            'is_admin' => $request->is_admin,
+        ];
+
+        if ($request->filled('phone_number')) {
+            $userData['phone_number'] = $request->phone_number;
+        }
+
+        $user->update($userData);
+
         return redirect()->route('users.index');
     }
+
 
     public function destroy(User $user)
     {

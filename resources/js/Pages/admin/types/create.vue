@@ -18,17 +18,17 @@ const form = useForm({
 
 <template>
     <Layout />
-        <Head title="Add a Brand" />
-        <form action="" @submit.prevent="form.post(route('brands.store'))">
+        <Head title="Add a Type" />
+        <form action="" @submit.prevent="form.post(route('types.store'))">
             <div>
-                <label for="brand_name">Barangay Name</label>
-                <input class="form-control" type="text" name="brand_name" id="brand_name" v-model="form.name"
-                    placeholder="Honda">
+                <label for="name">Type</label>
+                <input class="form-control" type="text" name="name" id="name" v-model="form.name"
+                    placeholder="Scooter">
             </div>
             <button type="submit" :disabled="form.processing">
                 Create
             </button>
-            <Link :href="route('brands.index')">Go Back</Link>
+            <Link :href="route('types.index')">Go Back</Link>
         </form>
     <Footer />
 </template>

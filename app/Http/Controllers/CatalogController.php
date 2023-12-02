@@ -24,7 +24,7 @@ class CatalogController extends Controller
                         $query->where('name', 'like', '%' . $search . '%');
                     });
             });
-        })->paginate(2);
+        })->paginate(9);
 
         return inertia('catalog', [
             'motorcycles' => $motorcycles,

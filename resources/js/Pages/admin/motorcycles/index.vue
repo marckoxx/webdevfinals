@@ -23,7 +23,7 @@ const destroy = (id) => {
 let search = ref('');
 
 watch(search, value => {
-    router.get('/motorcycles', { search: value }, { preserveState: true });
+    router.get('/admin/motorcycles', { search: value }, { preserveState: true });
 });
 
 const resetSearch = () => {

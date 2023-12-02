@@ -99,7 +99,6 @@ const submit = () => {
             </div>
           </div>
     </main>
-
     </GuestLayout>
 </template>
 <style scoped>

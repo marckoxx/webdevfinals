@@ -34,22 +34,22 @@ class MototypesController extends Controller
         return redirect()->route('types.index');
     }
 
-    public function edit(Mototypes $brand)
+    public function edit(Mototypes $type)
     {
-        return inertia('admin/types/edit', compact('brand'));
+        return inertia('admin/types/edit', compact('type'));
     }
 
-    public function update(Request $request, Mototypes $brand)
+    public function update(Request $request, Mototypes $type)
     {
-        $brand->update([
+        $type->update([
             'name' => $request->name,
         ]);
         return redirect()->route('types.index');
     }
 
-    public function destroy(Mototypes $brand)
+    public function destroy(Mototypes $type)
     {
-        $brand->delete();
+        $type->delete();
         return redirect()->route('types.index');
     }
 }
