@@ -7,21 +7,20 @@ import Footer from '@/Layouts/Footer.vue';
 
 const props = defineProps(
     {
-        brand: Object
+        type: Object
     }
 )
 
-const form = useForm(props.brand);
+const form = useForm(props.type);
 </script>
 
 <template>
     <Layout />
         <Head title="Edit a Brand" />
-        <form action="" @submit.prevent="form.put(route('brands.update', form.id))">
+        <form action="" @submit.prevent="form.put(route('types.update', form.id))">
             <div>
-                <label for="brand_name">Brand Name</label>
-                <input class="form-control" type="text" name="brand_name" id="brand_name" v-model="form.name"
-                    placeholder="Honda">
+                <label for="mototype">Type</label>
+                <input class="form-control" type="text" name="mototype" id="mototype" v-model="form.name">
             </div>
             <button type="submit" :disabled="form.processing">
                 Update

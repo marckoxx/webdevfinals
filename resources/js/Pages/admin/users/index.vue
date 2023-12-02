@@ -52,13 +52,13 @@ const getImagePath = (motor) => {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Brand</th>
-                        <th>Model</th>
-                        <th>Type</th>
-                        <th>Year</th>
-                        <th>Daily Rate</th>
-                        <th>Availability</th>
-                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Barangay</th>
+                        <th>Street</th>
+                        <th>Sex</th>
+                        <th>Is Admin</th>
                         <th colspan="2">Actions</th>
                     </tr>
                 </thead>
