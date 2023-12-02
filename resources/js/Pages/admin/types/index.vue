@@ -2,25 +2,28 @@
 import { Head, Link, useForm, router } from '@inertiajs/vue3';
 import { ref, watch } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue'
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Layout from '@/Layouts/Layout.vue';
+import Footer from '@/Layouts/Footer.vue';
 
 const props = defineProps(
     {
-        brands: Object
+        types: Object
     }
 )
 
-const form = useForm(props.brands);
+const form = useForm(props.types);
 
 const destroy = (id) => {
     if (confirm('Are you sure?')) {
-        form.delete(route('brands.destroy', id))
+        form.delete(route('types.destroy', id))
     }
 }
 
 let search = ref('');
 
 watch(search, value => {
-    router.get('/brands', { search: value }, { preserveState: true });
+    router.get('/types', { search: value }, { preserveState: true });
 });
 
 const resetSearch = () => {
@@ -29,15 +32,12 @@ const resetSearch = () => {
 </script>
 
 <template>
-    <GuestLayout>
+    <Layout />
         <div class="container my-4">
 
-            <Head title="Index of Brands" />
+            <Head title="Index of Types" />
             <div>
-                <Link :href="route('index')">Home</Link>
-            </div>
-            <div>
-                <Link :href="route('brands.create')" class="btn btn-primary rounded-pill m-1">Add a brand</Link>
+                <Link :href="route('types.create')" class="btn btn-primary rounded-pill m-1">Add a Motorcycle Type</Link>
             </div>
             <div class="input-group">
                 <input class="form-control" type="text" placeholder="Search..." v-model="search">
@@ -52,20 +52,20 @@ const resetSearch = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <template v-for="brand in brands" :key="brand.id">
+                    <template v-for="mototype in types" :key="mototype.id">
                         <tr>
-                            <td>{{ brand.id }}</td>
-                            <td>{{ brand.name }}</td>
+                            <td>{{ mototype.id }}</td>
+                            <td>{{ mototype.name }}</td>
                             <td>
-                                <Link :href="route('brands.edit', brand.id)" class="btn btn-primary rounded-pill">Edit</Link>
+                                <Link :href="route('types.edit', mototype.id)" class="btn btn-primary rounded-pill">Edit</Link>
                             </td>
-                            <td><button class="btn btn-danger rounded-pill" @click="destroy(brand.id)">Delete</button></td>
+                            <td><button class="btn btn-danger rounded-pill" @click="destroy(mototype.id)">Delete</button></td>
                         </tr>
                     </template>
                 </tbody>
             </table>
         </div>
-    </GuestLayout>
+    <Footer />
 </template>
 
 

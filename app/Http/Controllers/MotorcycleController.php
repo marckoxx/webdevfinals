@@ -28,7 +28,7 @@ class MotorcycleController extends Controller
             });
         })->get();
 
-        return inertia('motorcycles/index', [
+        return inertia('admin/motorcycles/index', [
             'motorcycles' => $motorcycles,
         ]);
     }
@@ -37,7 +37,7 @@ class MotorcycleController extends Controller
     {
         $brands = Brands::all();
         $types = Mototypes::all();
-        return inertia('motorcycles/create', [
+        return inertia('admin/motorcycles/create', [
             'brands' => $brands,
             'types'=> $types,
         ]);
@@ -81,7 +81,7 @@ class MotorcycleController extends Controller
     {
         $brands = Brands::all();
         $types = Mototypes::all();
-        return inertia('motorcycles/edit', compact('motorcycle', 'brands', 'types'));
+        return inertia('admin/motorcycles/edit', compact('motorcycle', 'brands', 'types'));
     }
 
     public function update(Request $request, Motorcycles $motorcycle)
