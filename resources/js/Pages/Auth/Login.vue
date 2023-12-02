@@ -33,11 +33,12 @@ const submit = () => {
     <GuestLayout>
         <div class="container">
 
-            <Head title="Log in" />
-
-            <div v-if="status" class="mb-4 font-medium text-sm text-success">
-                <!-- Bootstrap does not have a direct equivalent to Tailwind's text-green-600. You may adjust the color using Bootstrap classes or inline styles. -->
-                {{ status }}
+        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+            {{ status }}
+        </div>
+        <div class=" row mx-5 g-lg-5 py-5">
+            <div class="img-cont col-lg-7 text-center text-lg-start">
+                <img src="images/logo/logo3.png" alt="" class="img-fluid">
             </div>
             <div class="form col-md-6 col-lg-5">
                 <div class="d-flex justify-content-center">
@@ -53,25 +54,46 @@ const submit = () => {
                     </ul>
                 </div>
 
-                <form @submit.prevent="submit">
-                    <div class="mb-3">
-                        <InputLabel for="email" value="Email" />
-
-                        <TextInput id="email" type="email" class="form-control mt-1" v-model="form.email" required autofocus
-                            autocomplete="username" />
-
-                        <InputError class="mt-2" :message="form.errors.email" />
-                    </div>
-
-                    <div class="mb-3">
-                        <InputLabel for="password" value="Password" />
-
-                        <TextInput id="password" type="password" class="form-control mt-1" v-model="form.password" required
-                            autocomplete="current-password" />
-
-                        <InputError class="mt-2" :message="form.errors.password" />
-                    </div>
-
+                <div class="tab-content" id="loginSignupTabContent">
+                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                        <form  class="p-4 p-md-5 border rounded-3" @submit.prevent="submit" >
+                            <!--email-->
+                            <div class="form-floating mb-3">
+                                <TextInput
+                                    id="email"
+                                    type="email"
+                                    class="form-control"
+                                    v-model="form.email"
+                                    required
+                                    autofocus
+                                    autocomplete="username"
+                                />
+                                <InputLabel for="email" value="Email" />
+                                <div class="mt-2">
+                                <InputError class="mt-2" :message="form.errors.email" />
+                                </div>
+                            </div>
+                            <!--password-->
+                            <div class="form-floating mb-3">
+                                <TextInput
+                                    id="password"
+                                    type="password"
+                                    class="form-control"
+                                    v-model="form.password"
+                                    required
+                                    autocomplete="current-password"
+                                />
+                                <InputLabel for="password" value="Password" />
+                                <div class="mt-2">
+                                    <InputError class="mt-2" :message="form.errors.password" />
+                                </div>
+                            </div>
+                        <div class="block mt-4">
+                            <label class="flex items-center">
+                                <Checkbox name="remember" v-model:checked="form.remember" />
+                                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
+                            </label>
+                        </div>
                     <div class="mb-3 form-check">
                         <label class="form-check-label">
                             <Checkbox name="remember" v-model:checked="form.remember" class="form-check-input" />
@@ -91,6 +113,9 @@ const submit = () => {
                 </form>
             </div>
         </div>
+        </div>
+    </div>
+
     </GuestLayout>
 </template>
 <style scoped>
