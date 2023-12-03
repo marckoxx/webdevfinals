@@ -30,8 +30,8 @@ const getImagePath = (motor) => {
             <Link class="btn btn-dark" :href="route('catalog.index')">
                 Go Back
             </Link>
+            <h4 class="my-3 fw-bold">Reservation</h4>
             <div class="row mt-4">
-                <h4 class="my-3 fw-bold">Reservation</h4>
                 <div class="col-lg-6 py-lg-4 ps-lg-5">
                     <img :src="getImagePath(motorcycle)" :alt="motorcycle.model" class="img img-fluid fixed-height-image"
                     style="object-fit: cover; max-height: 500px;">
@@ -48,11 +48,7 @@ const getImagePath = (motor) => {
                             </p>
                             <!-- Add more details as needed -->
                         </div>
-                        <div class="reserve  d-flex justify-content-end">
-                            <button class="btn" @click="reserveMotorcycle">
-                                Reserve Now
-                            </button>
-                        </div>
+
                 </div>
                 <div class="col-md-8 col-lg-6 container-fluid">
                 <form class="needs-validation" novalidate="">
@@ -73,14 +69,22 @@ const getImagePath = (motor) => {
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" placeholder="you@example.com">
                     </div>
-
-                    <div class="col-12">
-                        <label for="address" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="contact" class="form-label">Phone No.</label>
+                            <input type="text" class="form-control" id="contact" placeholder="1234 Main St" required="">
+                        </div>
+                        <div class="col-6">
+                            <label for="contact" class="form-label">Phone No.</label>
+                            <input type="text" class="form-control" id="contact" placeholder="1234 Main St" required="">
+                        </div>
                     </div>
-
+                    <div class="col-12">
+                            <label for="license" class="form-label">License No.</label>
+                            <input type="text" class="form-control" id="license" placeholder="1234 Main St" required="">
+                        </div>
                     <hr class="my-4">
-
+                    <h5>Rental information</h5>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="same-address">
                         <label class="form-check-label" for="same-address">Shipping address is the same as my billing
@@ -108,10 +112,13 @@ const getImagePath = (motor) => {
                             <label for="password" class="form-label">Confirm Password</label>
                             <input type="password" class="form-control" id="password" placeholder="" required="">
                         </div>
-                        <hr class="my-4">
+
                     </div>
 
-                    <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
+                            <button class="btn w-100 mt-5   " @click="reserveMotorcycle">
+                                Reserve Now
+                            </button>
+
                 </form>
             </div>
                 </div>
