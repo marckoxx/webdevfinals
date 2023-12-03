@@ -4,6 +4,8 @@ import DeleteUserForm from './Partials/DeleteUserForm.vue';
 import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
 import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
 import { Head, useForm, usePage } from '@inertiajs/vue3';
+import Layout from '@/Layouts/Layout.vue';
+import Footer from '@/Layouts/Footer.vue';
 
 const props = defineProps({
     barangays: Array,
@@ -29,7 +31,7 @@ const form = useForm({
 <template>
     <Head title="Profile" />
 
-    <AuthenticatedLayout>
+    <Layout />
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -132,4 +134,5 @@ const form = useForm({
                 </div>
             </div>
         </div>
-</AuthenticatedLayout></template>
+        <Footer />
+</template>

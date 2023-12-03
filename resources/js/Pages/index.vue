@@ -19,14 +19,14 @@
                             <div class="container">
                                 <div class="carousel-caption" style="width:90%;" >
                                     <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
-                                        <h1 class="display-3 pb-2 pb-sm-3" style="font-weight: 700;"> <span class="text">Ride.</span>  <span>Explore</span>. Repeat.</h1>>
+                                        <h1 class="display-3 pb-2 pb-sm-3" style="font-weight: 700;"> <span class="text">Ride.</span>  <span>Explore</span>. Repeat.</h1>
                                         <p class="carousel-text fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5" style="font-weight: 700;">
                                             "Discover the freedom of the open road with our motorcycle rental services.
                                             Unleash your adventurous spirit and explore the world on two wheels.
                                             Ride with us and make every journey an unforgettable experience."
                                         </p>
                                     <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
-                                        <Link :href="route('catalog.index')" type="button" class="btn     me-3 me-sm-4" id="btn-show" style="font-weight: 600; font-size: 30px;">Rent Now</Link>
+                                        <Link :href="route('catalog.index')" type="button" class="btn me-3 me-sm-4" id="btn-show" style="font-weight: 600; font-size: 30px;">Rent Now</Link>
                                     </div>
                                 </div>
                                 </div>
