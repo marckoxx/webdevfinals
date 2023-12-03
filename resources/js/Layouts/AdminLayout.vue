@@ -41,7 +41,7 @@ const { props } = usePage();
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-user"></i> {{ $page.props.auth.user.name }}
+                                <i class="fa-duotone fa-user" style="font-size: 10px;"></i> {{ $page.props.auth.user.name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <li>
@@ -64,6 +64,7 @@ const { props } = usePage();
 font-family: var(--si-body-font-family);
 }
 .navbar{
+
     background-image: linear-gradient(to bottom right, #FFFFD0, #A555EC) ;
 }
 .nav-item:hover{
