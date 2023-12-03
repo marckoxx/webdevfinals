@@ -1,64 +1,15 @@
 <template>
     <Layout />
+
     <template v-if="authUser && isAdmin">
         <main class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 sidepanel d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary"
-                    style="height: 100vh;">
-                    <h5>OVERVIEW</h5>
-                    <ul class="nav  flex-column mb-auto">
-                        <li class="nav-item">
-                            <a href="dashboard.html" class="nav-link active" aria-current="page">
-                                <svg class="bi pe-none me-2" width="16" height="16">
-                                    <use xlink:href="#home"></use>
-                                </svg>
-                                Dashboard
-                            </a>
-                        </li>
-                        <li>
-                            <a href="rentalrecords.html" class="nav-link link-body-emphasis">
-                                <svg class="bi pe-none me-2" width="16" height="16">
-                                    <use xlink:href="#speedometer2"></use>
-                                </svg>
-                                Rental Records
-                            </a>
-                        </li>
-                        <li>
-                            <a href="bookingrecords.html" class="nav-link link-body-emphasis">
-                                <svg class="bi pe-none me-2" width="16" height="16">
-                                    <use xlink:href="#speedometer2"></use>
-                                </svg>
-                                Booking Records
-                            </a>
-                        </li>
-                        <li>
-                            <a href="notification.html" class="nav-link link-body-emphasis">
-                                <svg class="bi pe-none me-2" width="16" height="16">
-                                    <use xlink:href="#table"></use>
-                                </svg>
-                                Notification
-                            </a>
-                        </li>
-                    </ul>
-                    <h5>MANAGEMENT</h5>
-                <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item">
-                        <a href="rentalmanagement.html" class="nav-link active" aria-current="paddress">
-                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-                            Rental Management
-                        </a>
-                    </li>
-                    <li>
-                        <a href="usermanagement.html" class="nav-link link-body-emphasis">
-                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-                            User Management
-                        </a>
-                    </li>
-                </ul>
-                </div>
-
                 <div class=" mt-4 col-lg-9 mb-2 mb-xl-3">
                     <div class="row">
+                        <div class="col-lg-3 sidepanel d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary">
+                            <sidepanel></sidepanel> <!-- Open and close the sidepanel component -->
+                        </div>
+                        </div>
                         <div class="col-auto">
                             <h3>Dashboard</h3>
                         </div>
@@ -202,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
         </main>
     </template>
     <template v-else>
@@ -213,6 +164,7 @@
     </template>
 
     <Footer />
+
 </template>
 
 <script setup>
@@ -220,6 +172,7 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
 import Layout from '@/Layouts/Layout.vue';
 import Footer from '@/Layouts/Footer.vue';
+import sidepanel from '@/Layouts/sidepanel.vue'
 import { ref, defineProps, onMounted } from 'vue';
 import { router, Link, usePage } from '@inertiajs/vue3';
 

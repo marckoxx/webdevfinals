@@ -1,7 +1,7 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
 
-const navItems = [
+const SideItems = [
     { label: 'Home', route: 'index' },
     { label: 'Catalog', route: 'catalog.index' },
     { label: 'Contact', route: 'contact' },
@@ -12,9 +12,9 @@ const navItems = [
 <template>
     <slot />
 
-    <section class="footer pt-15 ">
+    <section class="footer">
         <div class="container">
-            <div class="row justify-content-center text-center">
+            <div class="row justify-content-center text-center  ">
                 <div class="col-lg-6">
                     <div>
                         <h1 class="px-14 mb-4 fw-bold" style="color: #FFFFD0;">Ride. Explore. Repeat.</h1>
