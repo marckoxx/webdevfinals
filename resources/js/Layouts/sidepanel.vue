@@ -2,17 +2,15 @@
 import { Link } from '@inertiajs/vue3';
 const overview = [
     { label: 'Dashboard', route: 'dashboard.index' },
-    { label: 'Rental Records', route: '' },
-    { label: 'Booking Records', route: '' },
     { label: 'Reserve Forms', route: 'about' },
 ];
 const Management = [
     { label: 'Rental Management', route: 'management' },
-    { label: 'User Management', route: '' },
 ];
 </script>
 
 <template>
+    <slot />
                     <h5>OVERVIEW</h5>
                     <ul class="nav  flex-column mb-auto">
                         <li v-for="(item, index) in overview" :key="index" class="sidepanel">
@@ -29,6 +27,8 @@ const Management = [
                             </Link>
                         </li>
                 </ul>
+
+                <slot />
 </template>
 <style scoped>
 

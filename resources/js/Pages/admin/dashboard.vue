@@ -7,7 +7,7 @@
                 <div class=" mt-4 col-lg-9 mb-2 mb-xl-3">
                     <div class="row">
                         <div class="col-lg-3 sidepanel d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary">
-                            <sidepanel></sidepanel> <!-- Open and close the sidepanel component -->
+                            <sidepanel />
                         </div>
                         </div>
                         <div class="col-auto">
