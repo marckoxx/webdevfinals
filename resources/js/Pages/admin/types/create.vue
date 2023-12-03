@@ -17,6 +17,7 @@ const form = useForm({
 </script>
 
 <template>
+    <Head title="Create - Types" />
     <Layout />
         <Head title="Add a Type" />
         <form action="" @submit.prevent="form.post(route('types.store'))">

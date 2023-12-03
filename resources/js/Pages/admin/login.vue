@@ -30,6 +30,7 @@ const submit = () => {
 </script>
 
 <template>
+    <Head title="Login" />
     <GuestLayout>
         <div class="container">
 

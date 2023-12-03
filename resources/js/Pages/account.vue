@@ -1,4 +1,5 @@
 <template>
+    <Head title="Account" />
     <Layout />
     <div id="acc" class="d-flex align-items-center justify-content-center container mb-8 mt-8">
         <div class="col-md-8 col-lg-6 container-fluid">

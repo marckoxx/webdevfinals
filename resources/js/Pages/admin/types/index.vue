@@ -32,6 +32,7 @@ const resetSearch = () => {
 </script>
 
 <template>
+    <Head title="Index - Types" />
     <Layout />
         <div class="container my-4">
 

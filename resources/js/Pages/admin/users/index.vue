@@ -34,6 +34,7 @@ const resetSearch = () => {
 </script>
 
 <template>
+    <Head title="Index - Users" />
     <Layout />
         <div class="container my-4">
 

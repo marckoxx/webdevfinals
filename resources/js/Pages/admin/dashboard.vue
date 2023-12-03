@@ -1,4 +1,5 @@
 <template>
+    <Head title="Dashboard" />
     <Layout />
 
     <template v-if="authUser && isAdmin">

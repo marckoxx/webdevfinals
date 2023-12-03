@@ -16,6 +16,8 @@ const form = useForm({
 </script>
 
 <template>
+    <Head title="Create - Motorcycles" />
+
     <Layout />
         <Head title="Add a Brand" />
         <form action="" @submit.prevent="form.post(route('brands.store'))">

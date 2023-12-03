@@ -5,7 +5,7 @@ const overview = [
     { label: 'Reserve Forms', route: 'about' },
 ];
 const Management = [
-    { label: 'Rental Management', route: 'management' },
+    { icon: 'fa-solid fa-chart-simple', label: 'Rental Management', route: 'management' },
 ];
 </script>
 
@@ -15,7 +15,7 @@ const Management = [
     <ul class="nav  flex-column mb-auto">
         <li v-for="(item, index) in overview" :key="index" class="sidepanel">
             <Link :href="route(item.route)" class="nav-link active" aria-current="page">
-            {{ item.label }}
+                {{ item.label }}
             </Link>
         </li>
     </ul>
@@ -23,11 +23,10 @@ const Management = [
     <ul class="nav nav-pills flex-column mb-auto">
         <li v-for="(item, index) in Management" :key="index" class="sidepanel">
             <Link :href="route(item.route)" class="nav-link active" aria-current="page">
-            {{ item.label }}
+                <i :class="item.icon"></i> {{ item.label }}
             </Link>
         </li>
     </ul>
-
     <slot />
 </template>
 <style scoped></style>

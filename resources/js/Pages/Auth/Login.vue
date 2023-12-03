@@ -30,6 +30,7 @@ const submit = () => {
 </script>
 
 <template>
+    <Head title="Login" />
     <GuestLayout>
         <main>
       <div class="mx-5 row   g-lg-5 py-5" style="display: flex; align-items:center; justify-content:center; justify-content: space-around;">

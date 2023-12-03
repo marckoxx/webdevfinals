@@ -37,6 +37,7 @@ const getImagePath = (motor) => {
 </script>
 
 <template>
+    <Head title="Index - Motorcycles" />
     <Layout />
         <div class="container my-4">
 

@@ -15,6 +15,7 @@ const form = useForm(props.type);
 </script>
 
 <template>
+    <Head title="Edit - Types" />
     <Layout />
         <Head title="Edit a Type" />
         <form action="" @submit.prevent="form.put(route('types.update', form.id))">

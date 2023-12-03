@@ -37,6 +37,8 @@ const submitForm = () => {
 </script>
 
 <template>
+    <Head title="Create - Users" />
+
     <Layout />
 
     <Head title="Add a User" />

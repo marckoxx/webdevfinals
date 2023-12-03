@@ -29,6 +29,7 @@ const props = defineProps({
 </script>
 
 <template>
+    <Head title="Sign Up" />
     <GuestLayout>
         <Head title="Register" />
         <div class="mx-5 row   g-lg-5 py-5" style="display: flex; align-items:center; justify-content:center; justify-content: space-around;">

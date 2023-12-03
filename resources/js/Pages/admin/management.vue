@@ -1,5 +1,6 @@
 <template>
-    <Layout />
+    <Head title="Management" />
+
     <main class="container">
 
         <h1 class="mt-4">Management</h1>

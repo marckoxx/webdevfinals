@@ -29,6 +29,8 @@ const submitForm = () => {
 </script>
 
 <template>
+    <Head title="Edit - Users" />
+
     <Layout />
 
     <Head title="Add a User" />

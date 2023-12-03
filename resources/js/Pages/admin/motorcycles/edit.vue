@@ -15,6 +15,8 @@ const form = useForm(props.motorcycle);
 </script>
 
 <template>
+    <Head title="Edit - Motorcycles" />
+
     <Layout />
         <Head title="Edit a Motorcycle" />
         <form class="container" action="" @submit.prevent="form.put(route('motorcycles.update', form.id))">

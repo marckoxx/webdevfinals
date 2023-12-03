@@ -15,6 +15,8 @@ const form = useForm(props.brand);
 </script>
 
 <template>
+    <Head title="Edit - Motorcycles" />
+
     <Layout />
     <div class="container">
         <Head title="Edit a Brand" />

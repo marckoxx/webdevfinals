@@ -1,4 +1,5 @@
 <template>
+    <Head title="Contact Us" />
     <Layout />
         <main class="container mb-8">
             <div class="py-5 text-center mb-5">

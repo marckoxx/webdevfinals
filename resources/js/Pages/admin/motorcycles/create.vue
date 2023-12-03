@@ -41,6 +41,8 @@ const submitForm = () => {
 </script>
 
 <template>
+    <Head title="Create - Motorcycles" />
+
     <Layout />
 
     <Head title="Add a Motorcycle" />
