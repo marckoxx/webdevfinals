@@ -1,10 +1,5 @@
 <template>
-    <template v-if="authUser">
-        <AuthenticatedLayout />
-    </template>
-    <template v-else>
-        <GuestLayout />
-    </template>
+    <Layout />
     <main class="about-section" style="margin-top: 80px;">
         <section class="container my-4">
             <div class="about-content text-center">
@@ -37,6 +32,7 @@
 <script setup>
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Layout from '@/Layouts/Layout.vue';
 import Footer from '@/Layouts/Footer.vue';
 import { ref, defineProps } from 'vue';
 

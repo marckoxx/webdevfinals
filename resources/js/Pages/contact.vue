@@ -1,5 +1,5 @@
 <template>
-    <GuestLayout>
+    <Layout />
         <main class="container mb-8">
             <div class="py-5 text-center mb-5">
                 <h2 class=" fw-bold" style="color: #A555EC;">CONTACT US</h2>
@@ -80,7 +80,7 @@
             </div>
         </main>
 
-    </GuestLayout>
+    <Footer />
 </template>
 <style scoped>
 .container {
@@ -140,6 +140,7 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
 import Footer from '@/Layouts/Footer.vue';
 import { ref, defineProps } from 'vue';
+import Layout from '@/Layouts/Layout.vue';
 
 const props = defineProps({
     auth: {
