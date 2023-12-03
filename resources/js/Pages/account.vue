@@ -1,10 +1,5 @@
 <template>
-    <template v-if="authUser">
-        <AuthenticatedLayout />
-    </template>
-    <template v-else>
-        <GuestLayout />
-    </template>
+    <Layout />
     <div id="acc" class="d-flex align-items-center justify-content-center container mb-8 mt-8">
         <div class="col-md-8 col-lg-6 container-fluid">
             <h4 class="mb-3">Account</h4>
@@ -73,6 +68,7 @@
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import Layout from '@/Layouts/Layout.vue';
 import Footer from '@/Layouts/Footer.vue';
 import { ref, defineProps } from 'vue';
 

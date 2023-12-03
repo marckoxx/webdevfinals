@@ -52,7 +52,7 @@ class MotorcycleController extends Controller
             'year' => 'required|numeric',
             'daily_rate' => 'required|numeric',
             'availability' => 'required|boolean',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp', // Adjust max size as needed
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp,avif', // Adjust max size as needed
         ]);
 
         $imagePath = null;
@@ -61,7 +61,7 @@ class MotorcycleController extends Controller
             $image = $request->file('image');
             $imageName = $request->model . $request->year .  '.' . $image->getClientOriginalExtension();
             $image->move(public_path('uploads'), $imageName);
-            $imagePath = 'uploads/' . $imageName;
+            $imagePath = 'uploads/' . $imageName; // change during deployment
         }
 
         Motorcycles::create([

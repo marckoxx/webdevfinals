@@ -1,8 +1,7 @@
 <template>
-    <GuestLayout>
+    <Layout />
 
-
-    </GuestLayout>
+    <Footer />
 </template>
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
