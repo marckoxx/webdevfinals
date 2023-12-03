@@ -59,3 +59,35 @@ const { props } = usePage();
         </nav>
     </header>
 <slot /></template>
+<style scoped>
+*{
+font-family: var(--si-body-font-family);
+}
+.navbar{
+    background-image: linear-gradient(to bottom right, #FFFFD0, #A555EC) ;
+}
+.nav-item:hover{
+font-size: 1em;
+border-radius: 10px 0 10px 0 ;
+background-image: linear-gradient(to bottom right, #D09CFA, #FFFFD0) ;
+transform: translateY(-10px);
+}
+.nav-item{
+font-weight: 700;
+transition: transform 250ms;
+}
+.footer{
+padding: 40px;
+background-image: linear-gradient(to bottom right, #A555EC , #FFFFD0) ;
+}
+.footerbtn {
+border-radius: 5px;
+height: 30px;
+background: linear-gradient(#A555EC 0 0) var(--p, 0) / var(--p, 0) no-repeat;
+transition: 0.4s, background-position 0s;
+}
+.footerbtn:hover {
+--p: 100%;
+color: #fff;
+}
+</style>
