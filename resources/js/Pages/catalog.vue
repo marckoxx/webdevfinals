@@ -95,7 +95,7 @@ const getImagePath = (motor) => {
         <div class="row mt-4">
             <template v-for="motor in motorcycles.data" :key="motor.id">
                 <div class="col-lg-6">
-                    <div class="card card-flush card-stretched-vertical">
+                    <div class="card card-flush card-stretched-vertical" style="border: 0;">
                         <!-- Container for each row -->
                         <div class="container1">
                             <div class="row">
@@ -108,7 +108,7 @@ const getImagePath = (motor) => {
                                 <div class="col-lg-6 py-lg-4 ps-lg-5">
                                     <div class="row">
                                         <h6 class="card-subtitle mb-2 text-muted">{{ motor.someProperty }}</h6>
-                                        <h5 class="card-title">{{ motor.brand.name + ' ' + motor.model }}</h5>
+                                        <h5 class="card-title" style="color: blueviolet; font-weight: bold;">{{ motor.brand.name + ' ' + motor.model }}</h5>
                                         <p class="card-text" :class="{ 'text-danger': motor.availability === 0 }">{{
                                             motor.availability === 1 ? 'Available' : 'Not available' }}</p>
                                         <small class="text-body-secondary">PHP {{ motor.daily_rate }}/day</small>
@@ -197,7 +197,7 @@ const getImagePath = (motor) => {
 }
 
 .container1 {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border:0;
     padding: 20px;
 }
 </style>
