@@ -1,6 +1,6 @@
 <template>
     <Head title="Management" />
-
+    <Layout />
     <main class="container">
 
         <h1 class="mt-4">Management</h1>
