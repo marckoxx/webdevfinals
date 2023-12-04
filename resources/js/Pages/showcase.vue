@@ -3,12 +3,7 @@ import { Head, Link, useForm, router } from '@inertiajs/vue3';
 import { ref, defineProps } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import Footer from '@/Layouts/Footer.vue';
-<<<<<<< HEAD
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-
-=======
 import Layout from '@/Layouts/Layout.vue';
->>>>>>> 02f526679b32dd3d4664a269f09313c3fd24ded0
 
 const props = defineProps({
     auth: {
@@ -123,13 +118,8 @@ const getImagePath = (motor) => {
         </div>
 
 
-<<<<<<< HEAD
-    </GuestLayout>
-    <Footer />
-=======
     <Footer />
 
->>>>>>> 02f526679b32dd3d4664a269f09313c3fd24ded0
 </template>
 
 <style scoped>

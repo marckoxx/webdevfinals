@@ -1,14 +1,6 @@
 <template>
 
     <template v-if="authUser && isAdmin">
-<<<<<<< Updated upstream
-        <main class="container-fluid">
-            <div class="row">
-                <div class=" mt-4 col-lg-9 mb-2 mb-xl-3">
-                    <div class="row">
-                        <div class="col-lg-3 sidepanel d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary">
-                            <sidepanel></sidepanel> <!-- Open and close the sidepanel component -->
-=======
             <div class="container-fluid">
                 <div class="row">
                     <sidepanel />
@@ -18,7 +10,6 @@
                             <div class="col-auto">
                                 <h2 class="fw-bold">Dashboard</h2>
                             </div>
->>>>>>> Stashed changes
                         </div>
                         <div class="ms-auto text-end mt-n1 col-auto pe-3 me-5">
                             <div class="d-inline me-2 dropdown">
@@ -177,7 +168,6 @@
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
 import Layout from '@/Layouts/Layout.vue';
-import Footer from '@/Layouts/Footer.vue';
 import sidepanel from '@/Layouts/sidepanel.vue'
 import { ref, defineProps, onMounted } from 'vue';
 import { router, Link, usePage } from '@inertiajs/vue3';
