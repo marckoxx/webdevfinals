@@ -13,65 +13,76 @@
                             aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner ">
-                        <div class="carousel-item active">
+                        <div class="carousel-item active" data-interval="500">
                             <img :src="'images/logo/carousel2.jpg'" alt="First Image" style="max-height: calc(100vh-63px);"
                                 class="img-fluid w-100">
-                            <div class="container">
-                                <div class="carousel-caption" style="width:90%;" >
-                                    <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
-                                        <h1 class="display-3 pb-2 pb-sm-3" style="font-weight: 700;"> <span class="text">Ride.</span>  <span>Explore</span>. Repeat.</h1>>
-                                        <p class="carousel-text fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5" style="font-weight: 700;">
-                                            "Discover the freedom of the open road with our motorcycle rental services.
-                                            Unleash your adventurous spirit and explore the world on two wheels.
-                                            Ride with us and make every journey an unforgettable experience."
-                                        </p>
-                                    <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
-                                        <Link :href="route('catalog.index')" type="button" class="btn     me-3 me-sm-4" id="btn-show" style="font-weight: 600; font-size: 30px;">Rent Now</Link>
+                                <div class="container">
+                                    <div class="carousel-caption" style="width: 90%;">
+                                        <div class="row">
+                                            <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
+                                                <h1 class="display-3 pb-2 pb-sm-3" style="font-weight: 700;">
+                                                    <span class="text">Ride.</span> <span>Explore</span>. Repeat.
+                                                </h1>
+                                                <p class="carousel-text fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5" style="font-weight: 700;">
+                                                    "Discover the freedom of the open road with our motorcycle rental services.
+                                                    Unleash your adventurous spirit and explore the world on two wheels.
+                                                    Ride with us and make every journey an unforgettable experience."
+                                                </p>
+                                                <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
+                                                    <Link :href="route('catalog.index')" type="button" class="btn me-3 me-sm-4" id="btn-show" style="font-weight: 600; font-size: 30px;">Rent Now</Link>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-interval="500">
                             <img :src="'images/logo/carousel3.jpg'" alt="Second Image" style="max-height: calc(100vh-63px);"
                                 class="img-fluid w-100">
-                            <div class="container">
-                                <div class="carousel-caption" style="width:90%;" >
-                                    <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
-                                        <h1 class="display-3 pb-2 pb-sm-3" style="font-weight: 700;"> <span class="text">Ride.</span>  <span>Explore</span>. Repeat.</h1>
-                                        <p class="carousel-text fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5" style="font-weight: 700;">
-                                            "Discover the freedom of the open road with our motorcycle rental services.
-                                            Unleash your adventurous spirit and explore the world on two wheels.
-                                            Ride with us and make every journey an unforgettable experience."
-                                        </p>
-
-                                    <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
-                                        <Link :href="route('catalog.index')" type="button" class="btn   me-3 me-sm-4" id="btn-show" style="font-weight: 600; font-size: 30px;">Rent Now
-                                </Link>
+                                <div class="container">
+                                    <div class="carousel-caption" style="width: 90%;">
+                                        <div class="row">
+                                            <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
+                                                <h1 class="display-3 pb-2 pb-sm-3" style="font-weight: 700;">
+                                                    <span class="text">Ride.</span> <span>Explore</span>. Repeat.
+                                                </h1>
+                                                <p class="carousel-text fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5" style="font-weight: 700;">
+                                                    "Discover the freedom of the open road with our motorcycle rental services.
+                                                    Unleash your adventurous spirit and explore the world on two wheels.
+                                                    Ride with us and make every journey an unforgettable experience."
+                                                </p>
+                                                <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
+                                                    <Link :href="route('catalog.index')" type="button" class="btn me-3 me-sm-4" id="btn-show" style="font-weight: 600; font-size: 30px;">Rent Now</Link>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
-                            </div>
+
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-interval="500">
                             <img :src="'images/logo/carousel1.jpg'" alt="Third Image" style="max-height: calc(100vh-63px);"
                                 class="img-fluid w-100">
-                            <div class="container">
-                                <div class="carousel-caption" style="width:90%;" >
-                                    <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
-                                        <h1 class="display-3 pb-2 pb-sm-3" style="font-weight: 700;"> <span class="text">Ride.</span>  <span>Explore</span>. Repeat.</h1>
-                                        <p class="carousel-text fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5" style="font-weight: 700;">
-                                            "Discover the freedom of the open road with our motorcycle rental services.
-                                            Unleash your adventurous spirit and explore the world on two wheels.
-                                            Ride with us and make every journey an unforgettable experience."
-                                        </p>
-                                    <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
-                                        <Link :href="route('catalog.index')" type="button" class="btn  me-3 me-sm-4" id="btn-show" style="font-weight: 600; font-size: 30px;">Rent Now
-                                </Link>
+                                <div class="container">
+                                    <div class="carousel-caption" style="width: 90%;">
+                                        <div class="row">
+                                            <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
+                                                <h1 class="display-3 pb-2 pb-sm-3" style="font-weight: 700;">
+                                                    <span class="text">Ride.</span> <span>Explore</span>. Repeat.
+                                                </h1>
+                                                <p class="carousel-text fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5" style="font-weight: 700;">
+                                                    "Discover the freedom of the open road with our motorcycle rental services.
+                                                    Unleash your adventurous spirit and explore the world on two wheels.
+                                                    Ride with us and make every journey an unforgettable experience."
+                                                </p>
+                                                <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
+                                                    <Link :href="route('catalog.index')" type="button" class="btn me-3 me-sm-4" id="btn-show" style="font-weight: 600; font-size: 30px;">Rent Now</Link>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
@@ -259,9 +270,7 @@ const authUser = ref(props.auth.user !== null);
   color: #FFFFD0;
  font-weight: 300;
 }
-.carousel-text{
-    color: #FFFFD0;
-}
+
 span{
     color: #A555EC;
 }
@@ -271,6 +280,10 @@ span{
 h2{
     color: #A555EC
     ;
+}
+p{
+    color: #FFFFD0;
+    font-size: 20px;
 }
 .card{
     -webkit-filter: brightness(50%);
