@@ -3,8 +3,8 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import DeleteUserForm from './Partials/DeleteUserForm.vue';
 import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
 import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
-import { Head, useForm, usePage } from '@inertiajs/vue3';
-
+import { Head, useForm, usePage,Link } from '@inertiajs/vue3';
+import Footer from '@/Layouts/Footer.vue';
 const props = defineProps({
     barangays: Array,
     status: {
@@ -30,14 +30,14 @@ const form = useForm({
     <Head title="Profile" />
 
     <AuthenticatedLayout>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h2 class="font-weight-bold text-xl">Profile</h2>
+        <div class="container  mb-8">
+            <div class="col-sm-2 col-lg-6 order-sm-1 mt-5 ms-4">
+                    <Link class="btn" :href="route('index')">
+                        <i class="back-btn fa-solid fa-circle-arrow-left " style="font-size: 20px; color: blueviolet;"> Go Back  </i>
+                    </Link>
                 </div>
-            </div>
 
-            <div class="py-4">
+            <div class="py-3">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-sm-6 col-md-8">
@@ -104,7 +104,7 @@ const form = useForm({
                                         </div>
 
                                         <div class="d-flex align-items-center gap-4">
-                                            <button class="btn btn.primary" :disabled="form.processing">Save</button>
+                                            <button class="button " :disabled="form.processing">Update</button>
 
                                             <transition enter-active-class="transition ease-in-out"
                                                 enter-from-class="opacity-0" leave-active-class="transition ease-in-out"
@@ -132,4 +132,28 @@ const form = useForm({
                 </div>
             </div>
         </div>
+        <Footer />
 </AuthenticatedLayout></template>
+<style scoped>
+.button{
+    padding: 6px;
+    border: 0px;
+    margin-top: 15px;
+    width: 30%;
+    border-radius: 50px ;
+    text-decoration: none;
+    color: black;
+    height: auto;
+    transition: 1s ease;
+    background-color: rgb(47, 255, 85);
+}
+
+
+.button:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 1s ease;
+    transition: 1s ease;
+}
+</style>
