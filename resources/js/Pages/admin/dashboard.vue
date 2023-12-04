@@ -1,19 +1,26 @@
 <template>
-    <Layout />
 
     <template v-if="authUser && isAdmin">
+<<<<<<< Updated upstream
         <main class="container-fluid">
             <div class="row">
                 <div class=" mt-4 col-lg-9 mb-2 mb-xl-3">
                     <div class="row">
                         <div class="col-lg-3 sidepanel d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary">
                             <sidepanel></sidepanel> <!-- Open and close the sidepanel component -->
+=======
+            <div class="container-fluid">
+                <div class="row">
+                    <sidepanel />
+                <div class="p-0 col-lg-10 " style="height: 100vh;">
+                <Layout />
+                        <div class="row mt-4 ms-3 ">
+                            <div class="col-auto">
+                                <h2 class="fw-bold">Dashboard</h2>
+                            </div>
+>>>>>>> Stashed changes
                         </div>
-                        </div>
-                        <div class="col-auto">
-                            <h3>Dashboard</h3>
-                        </div>
-                        <div class="ms-auto text-end mt-n1 col-auto">
+                        <div class="ms-auto text-end mt-n1 col-auto pe-3 me-5">
                             <div class="d-inline me-2 dropdown">
                                 <button type="button" id="react-aria2144819985-6" aria-expanded="false"
                                     class="bg-white shadow-sm dropdown-toggle btn btn-light">
@@ -45,7 +52,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class=" mt-4 container-fluid">
+                        <div class="col-lg-11 mt-4 container-fluid mx-5">
                             <div class="row">
                                 <div class="col-12 col-md-6 col-xl-4">
                                     <div class="flex-fill card mb-3">
@@ -153,8 +160,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-        </main>
     </template>
     <template v-else>
         <div class="container col-6">
@@ -163,7 +170,6 @@
         </div>
     </template>
 
-    <Footer />
 
 </template>
 

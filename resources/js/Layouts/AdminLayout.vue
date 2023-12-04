@@ -1,12 +1,7 @@
 <script setup>
 import { ref, onMounted, defineProps } from 'vue';
 import { Link, usePage } from '@inertiajs/vue3';
-
-const navItems = [
-    { label: 'Dashboard', route: 'dashboard.index' },
-    { label: 'Management', route: 'management' },
-];
-const { url, component } = usePage();
+const { url, componen } = usePage();
 
 const refreshPage = () => {
     if (component === 'index') {
@@ -19,29 +14,18 @@ const { props } = usePage();
 
 <template>
     <header>
-        <nav class="navbar navbar-expand-md bg-body-tertiary">
-            <div class="container-fluid">
-                <Link class="navbar-brand d-flex align-items-center" :href="route('dashboard.index')">
-                <img class="rounded mr-1" :src="'/images/logo/logo3.png'" alt="Company Logo"
-                    style="width: 37px; height: 37px;">
-                MotoRent
-                </Link>
+        <nav class="navbar navbar-expand-md ">
+            <div class="container-fluid me-5" style="justify-content: flex-end; ">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li v-for="(item, index) in navItems" :key="index" class="nav-item">
-                            <Link :href="route(item.route)" class="nav-link active" aria-current="page">
-                            {{ item.label }}
-                            </Link>
-                        </li>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-decoration: none;">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-duotone fa-user" style="font-size: 10px;"></i> {{ $page.props.auth.user.name }}
+                                 {{ $page.props.auth.user.name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <li>
@@ -53,7 +37,6 @@ const { props } = usePage();
                                 </li>
                             </ul>
                         </li>
-                    </ul>
                 </div>
             </div>
         </nav>
@@ -64,15 +47,9 @@ const { props } = usePage();
 font-family: var(--si-body-font-family);
 }
 .navbar{
+    background-color: #D09CFA;
+}
 
-    background-image: linear-gradient(to bottom right, #FFFFD0, #A555EC) ;
-}
-.nav-item:hover{
-font-size: 1em;
-border-radius: 10px 0 10px 0 ;
-background-image: linear-gradient(to bottom right, #D09CFA, #FFFFD0) ;
-transform: translateY(-10px);
-}
 .nav-item{
 font-weight: 700;
 transition: transform 250ms;
@@ -90,5 +67,8 @@ transition: 0.4s, background-position 0s;
 .footerbtn:hover {
 --p: 100%;
 color: #fff;
+}
+li{
+    text-decoration: none;
 }
 </style>
