@@ -36,10 +36,13 @@ const submitForm = () => {
 </script>
 
 <template>
+<<<<<<< Updated upstream
     <Head title="Create - Users" />
 
     <Layout />
 
+=======
+>>>>>>> Stashed changes
     <Head title="Add a User" />
     <div class="container-fluid ">
             <div class="row">

@@ -35,7 +35,7 @@ console.log(props.auth.user.is_admin);
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="z-index: 99;">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li v-for="(item, index) in navItems" :key="index" class="nav-item">
                             <Link :href="route(item.route)" class="nav-link active" aria-current="page">
@@ -96,5 +96,5 @@ console.log(props.auth.user.is_admin);
   --p: 100%;
   color: #fff;
 }
-</style>
 
+</style>
