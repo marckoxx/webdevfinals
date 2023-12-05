@@ -2,6 +2,7 @@
 import { ref, onMounted, defineProps } from 'vue';
 import { Link, usePage } from '@inertiajs/vue3';
 
+const { url, componen } = usePage();
 const refreshPage = () => {
     if (component === 'index') {
         // Refresh the current page only if the URL is '/'
@@ -25,22 +26,22 @@ const { props } = usePage();
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-decoration: none;">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ $page.props.auth.user.name }}
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li>
-                                <Link :href="route('profile.edit')" class="dropdown-item">Edit Profile</Link>
-                            </li>
-                            <li>
-                                <Link :href="route('logout')" class="dropdown-item text-danger" method="post" as="button"
-                                    @click="refreshPage">Logout</Link>
-                            </li>
-                        </ul>
-                    </li>
+                <i class="fa-regular fa-circle-user"></i>
+                <div class="collapse navbar-collapse fw-bold " id="navbarSupportedContent" style="text-decoration: none;">
+                            <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                 {{ $page.props.auth.user.name }}
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <Link :href="route('profile.edit')" class="dropdown-item">Edit Profile</Link>
+                                </li>
+                                <li>
+                                    <Link :href="route('logout')" class="dropdown-item text-danger" method="post"
+                                        as="button" @click="refreshPage">Logout</Link>
+                                </li>
+                            </ul>
                 </div>
             </div>
         </nav>

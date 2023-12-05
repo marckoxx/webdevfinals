@@ -5,7 +5,12 @@ import GuestLayout from '@/Layouts/GuestLayout.vue'
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
 import Footer from '@/Layouts/Footer.vue';
 import Layout from '@/Layouts/Layout.vue';
-
+function sortBrands(brand) {
+    // Add sorting logic here based on the selected brand
+    // For simplicity, let's just log the selected brand for now
+    console.log('Sort by brand:', brand);
+    // You can add more advanced sorting logic or update UI as needed
+}
 const props = defineProps(
     {
         auth: {
@@ -148,6 +153,7 @@ const getImagePath = (motor) => {
 }
 
 .fixed-height-image {
+    width: 300px;
     height: 200px;
     /* Adjust the height as needed */
     object-fit: cover;

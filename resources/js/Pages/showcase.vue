@@ -4,7 +4,6 @@ import { ref, defineProps } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import Footer from '@/Layouts/Footer.vue';
 import Layout from '@/Layouts/Layout.vue';
-
 const props = defineProps({
     auth: {
         type: Object,
@@ -36,7 +35,7 @@ const startDate = ref('');
     <Layout />
     <div class="container my-4">
         <Link class="btn" :href="route('catalog.index')">
-        <i class="back-btn fa-solid fa-circle-arrow-left " style=" font-size: 40px; color: blueviolet;"></i>
+        <i class="back-btn fa-solid fa-circle-arrow-left mt-3" style=" font-size: 40px; color: blueviolet;"></i>
         </Link>
         <h2 class="my-3 fw-bold" style="display: flex; justify-content: center; margin-bottom: 30px ;">Reservation Form</h2>
         <div class="row mt-4">
@@ -101,11 +100,6 @@ const startDate = ref('');
                     <input class="form-control" type="date" name="endDate" id="endDate" v-model="endDate"
                         @change="handleDateChange" />
                     <hr class="my-4">
-
-                    <div class="col-md-12">
-                        <label for="helmet">Helmet</label>
-                        <input type="text" class="form-control" id="helmet" placeholder="" required="">
-                    </div>
                     <div class="row gy-3">
                         <div class="col-md-6">
                             <label for="h_type" class="form-label">Helmet Type</label>
@@ -194,3 +188,4 @@ form {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 </style>
+
