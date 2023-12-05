@@ -69,28 +69,50 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <label for="contact" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="contact" placeholder="1234 Main St" required="">
-                    </div>
-                    <div class="col-12">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="you@example.com">
-                    </div>
                     <div class="row">
-                        <div class="col-6">
+                        <label class="form-label" for="dateRange">Select Time Range</label>
+                        <div class="col-7">
+                            <label for="contact" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="contact" placeholder="1234 Main St" required="">
+                        </div>
+                        <div class="col-5">
                             <label for="contact" class="form-label">Phone No.</label>
                             <input type="text" class="form-control" id="contact" placeholder="1234 Main St" required="">
                         </div>
-                        <div class="col-6">
-                            <label for="contact" class="form-label">Secondary Phone No.</label>
-                            <input type="text" class="form-control" id="contact" placeholder="1234 Main St" required="">
-                        </div>
                     </div>
-                    <div class="col-12">
+                    <div class="row">
+                        <label class="form-label" for="dateRange">Select Time Range</label>
+                        <div class="col-5">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                        </div>
+                        <div class="col-7">
                             <label for="license" class="form-label">License No.</label>
                             <input type="text" class="form-control" id="license" placeholder="1234 Main St" required="">
                         </div>
+                    </div>
+                    <div class="col-12">
+
+                    </div>
+                    <hr class="my-4">
+                    <h5>Contact Person</h5>
+                    <div class="col-12">
+                            <label for="ContName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="ContName" placeholder="" value="" required="">
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <label for="contact" class="form-label">Secondary Phone No.</label>
+                            <input type="text" class="form-control" id="contact" placeholder="1234 Main St" required="">
+                        </div>
+                        <div class="col-7">
+                            <label for="contact" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="contact" placeholder="1234 Main St" required="">
+                        </div>
+                    </div>
                     <hr class="my-4">
                     <h5>Rental information</h5>
 
@@ -181,10 +203,11 @@ button:hover{
 
     }
     form{
+        width: 100%;
         background-color: rgba(208, 156, 250, 0.3);
         margin: 50px;
         border-radius: 20px;
-        padding: 40px 50px;
+        padding: 40px;
         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     }
 

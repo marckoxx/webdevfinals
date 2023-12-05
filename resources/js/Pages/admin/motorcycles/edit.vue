@@ -23,7 +23,7 @@ const form = useForm(props.motorcycle);
                 <div class="p-0 col-lg-10 " style="height: 100vh;">
                 <Layout />
                     <div class="col-sm-2 col-lg-6 order-sm-1 mt-5 ms-4">
-                        <Link class="btn" :href="route('management')">
+                        <Link class="btn" :href="route('motorcycles.index')">
                             <i class="back-btn fa-solid fa-circle-arrow-left " style="font-size: 20px; color: blueviolet;"> Go Back  </i>
                         </Link>
                     </div>
