@@ -1,7 +1,7 @@
 <template>
     <Layout />
     <Head title="Abouts" />
-    <main class="about-section" style="margin-top: 80px;">
+    <main class="about-section" style="margin-top: 80px">
         <section class="container my-4">
             <div class="about-content text-center">
                 <h1>About MotoRent</h1>

@@ -1,5 +1,6 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
+import { ref } from 'vue';
 
 const navItems = [
     { label: 'Home', route: 'index' },
@@ -9,11 +10,26 @@ const navItems = [
     { label: 'Login', route: 'login' },
     { label: 'Sign Up', route: 'register' },
 ];
+
+const prevScrollPos = ref(window.scrollY);
+const navbarTop = ref('0px');
+
+window.addEventListener('scroll', () => {
+    const currentScrollPos = window.scrollY;
+
+    if (prevScrollPos.value > currentScrollPos) {
+        navbarTop.value = '0';
+    } else {
+        navbarTop.value = `-${document.querySelector('.navbar').offsetHeight}px`;
+    }
+
+    prevScrollPos.value = currentScrollPos <= 0 ? 0 : currentScrollPos;
+});
 </script>
 
 <template>
     <header>
-        <nav class="navbar navbar-expand-md d-flex justify-content-around" style="font-weight: 700;">
+        <nav class="navbar navbar-expand-md d-flex justify-content-around w-100" style="font-weight: 700;" :style="{ top: navbarTop }">
             <div class="container-fluid">
                 <Link class="navbar-brand d-flex align-items-center" :href="route('index')">
                 <img class="rounded mr-1" :src="'/images/logo/logo3.png'" alt="Company Logo"
@@ -52,6 +68,11 @@ const navItems = [
 
 .navbar {
     background-image: linear-gradient(to bottom right, #FFFFD0, #A555EC);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.3s;
+    z-index: 999;
 }
 
 .nav-item:hover {

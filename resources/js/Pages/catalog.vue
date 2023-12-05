@@ -36,15 +36,15 @@ const getImagePath = (motor) => {
 </script>
 
 <template>
+    <Head title="Catalog" />
     <Layout />
-    <div class="container my-4">
+    <div class="container my-4 navheightfix ">
 
 
-        <Head title="Catalog" />
 
 
         <section class=" text-center container">
-            <div class="row my-5">
+            <div class="row mb-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1 class="fw-bold" style=" color: blueviolet;">Catalog</h1>
                     <p class="lead ">Pick motorcycles from 5 reputable brands</p>
@@ -104,7 +104,8 @@ const getImagePath = (motor) => {
                                 <div class="col-lg-6 py-lg-4 ps-lg-5">
                                     <div class="row">
                                         <h6 class="card-subtitle mb-2 text-muted">{{ motor.someProperty }}</h6>
-                                        <h5 class="card-title" style="color: blueviolet; font-weight: bold;">{{ motor.brand.name + ' ' + motor.model }}</h5>
+                                        <h5 class="card-title" style="color: blueviolet; font-weight: bold;">{{
+                                            motor.brand.name + ' ' + motor.model }}</h5>
                                         <p class="card-text" :class="{ 'text-danger': motor.availability === 0 }">{{
                                             motor.availability === 1 ? 'Available' : 'Not available' }}</p>
                                         <small class="text-body-secondary">PHP {{ motor.daily_rate }}/day</small>
@@ -193,7 +194,7 @@ const getImagePath = (motor) => {
 }
 
 .container1 {
-    border:0;
+    border: 0;
     padding: 20px;
 }
 </style>
