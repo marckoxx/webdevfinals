@@ -42,7 +42,7 @@ const submitForm = () => {
 </script>
 
 <template>
-    <Head title="Add a Motorcycle" />
+    <Head title="Create - Motorcycles" />
     <div class="container-fluid ">
             <div class="row">
                 <sidepanel />

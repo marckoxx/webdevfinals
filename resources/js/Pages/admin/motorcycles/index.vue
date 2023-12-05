@@ -37,7 +37,7 @@ const getImagePath = (motor) => {
 </script>
 
 <template>
-    <Head title="Index of Motorcycles" />
+    <Head title="Index - Motorcycles" />
     <div class="container-fluid">
         <div class="row">
             <sidepanel />

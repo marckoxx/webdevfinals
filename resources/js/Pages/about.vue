@@ -1,5 +1,6 @@
 <template>
     <Layout />
+    <Head title="Abouts" />
     <main class="about-section" style="margin-top: 80px;">
         <section class="container my-4">
             <div class="about-content text-center">

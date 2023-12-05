@@ -40,7 +40,7 @@ const getImagePath = (motor) => {
     <div class="container my-4">
 
 
-        <Head title="Index of Motorcycles" />
+        <Head title="Catalog" />
 
 
         <section class=" text-center container">

@@ -33,7 +33,7 @@ const resetSearch = () => {
 </script>
 
 <template>
-    <Head title="Index of Brands" />
+    <Head title="Index - Brands" />
             <div class="container-fluid">
                 <div class="row">
                     <sidepanel />

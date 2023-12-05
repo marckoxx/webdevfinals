@@ -34,7 +34,7 @@ const resetSearch = () => {
 </script>
 
 <template>
-    <Head title="Index of Users" />
+    <Head title="Index - Users" />
     <div class="container-fluid">
         <div class="row">
             <sidepanel />

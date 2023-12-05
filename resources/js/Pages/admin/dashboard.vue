@@ -1,4 +1,5 @@
 <template>
+    <Head title="Dashboard" />
 
     <template v-if="authUser && isAdmin">
             <div class="container-fluid">

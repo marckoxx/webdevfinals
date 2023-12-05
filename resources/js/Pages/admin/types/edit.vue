@@ -15,7 +15,7 @@ const form = useForm(props.type);
 </script>
 
 <template>
-        <Head title="Edit a Type" />
+        <Head title="Edit - Types" />
         <div class="container-fluid ">
             <div class="row">
                 <sidepanel />

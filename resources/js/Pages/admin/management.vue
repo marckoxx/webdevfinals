@@ -1,9 +1,11 @@
 <template>
+    <Head title="Management" />
+
     <div class="container-fluid">
         <div class="row">
                 <sidepanel />
                 <div class="p-0 col-lg-10 " style="height: 100vh;">
-                <Layout />
+    <Layout />
                     <div class="container1  p-0 col-lg-10" style="height: 100vh;">
                         <div class="contianer">
                             <div class="row mt-4 ms-3">

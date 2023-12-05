@@ -18,7 +18,7 @@ const form = useForm({
 </script>
 
 <template>
-        <Head title="Add a Type" />
+        <Head title="Create - Types" />
         <div class="container-fluid ">
             <div class="row">
                 <sidepanel />

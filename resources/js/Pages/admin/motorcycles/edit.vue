@@ -16,7 +16,7 @@ const form = useForm(props.motorcycle);
 </script>
 
 <template>
-        <Head title="Edit a Motorcycle" />
+        <Head title="Edit - Motorcycles" />
         <div class="container-fluid ">
             <div class="row">
                 <sidepanel />

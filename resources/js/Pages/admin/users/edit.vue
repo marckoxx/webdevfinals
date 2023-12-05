@@ -29,7 +29,7 @@ const submitForm = () => {
 </script>
 
 <template>
-    <Head title="Add a User" />
+    <Head title="Edit - Users" />
     <div class="container-fluid ">
             <div class="row">
                 <sidepanel />

@@ -23,6 +23,7 @@ const getImagePath = (motor) => {
 </script>
 
 <template>
+    <Head title="Reserve Now" />
 
     <Layout />
         <div class="container my-4">

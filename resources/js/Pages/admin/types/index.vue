@@ -31,7 +31,7 @@ const resetSearch = () => {
 </script>
 
 <template>
-            <Head title="Index of Types" />
+            <Head title="Index - Types" />
             <div class="container-fluid">
                 <div class="row">
                     <sidepanel />
