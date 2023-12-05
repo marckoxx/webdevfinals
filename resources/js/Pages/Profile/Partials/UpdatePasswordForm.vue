@@ -72,7 +72,7 @@ const updatePassword = () => {
             </div>
 
             <div class="d-flex align-items-center gap-4">
-                <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
+                <Button :disabled="form.processing">Save</Button>
 
                 <transition enter-active-class="transition ease-in-out" enter-from-class="opacity-0"
                     leave-active-class="transition ease-in-out" leave-to-class="opacity-0">
@@ -82,3 +82,26 @@ const updatePassword = () => {
         </form>
     </section>
 </template>
+<style scope>
+button{
+    padding: 6px;
+    border: 0px;
+    margin-top: 15px;
+    width: 30%;
+    border-radius: 50px ;
+    text-decoration: none;
+    color: black;
+    height: auto;
+    transition: 1s ease;
+    background-color: rgb(47, 255, 85);
+}
+
+
+button:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 1s ease;
+    transition: 1s ease;
+}
+</style>
