@@ -12,6 +12,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShowcaseController;
 use App\Http\Controllers\MotorcycleController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\HelmetController;
 use App\Http\Controllers\MototypesController;
 
 /*
@@ -72,6 +73,7 @@ Route::middleware('adminAuth')->group(function () {
     Route::resource('/admin/brands', BrandsController::class);
     Route::resource('/admin/types', MototypesController::class);
     Route::resource('/admin/users', UserController::class);
+    Route::resource('/admin/helmets', HelmetController::class);
 
     Route::get('/admin/management', function () {
         return Inertia::render('admin/management');

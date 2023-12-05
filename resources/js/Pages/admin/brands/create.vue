@@ -16,13 +16,11 @@ const form = useForm({
 </script>
 
 <template>
-    <Head title="Create - Motorcycles" />
-
     <Layout />
         <Head title="Add a Brand" />
         <form action="" @submit.prevent="form.post(route('brands.store'))">
             <div>
-                <label for="brand_name">Barangay Name</label>
+                <label for="brand_name">Brand Name</label>
                 <input class="form-control" type="text" name="brand_name" id="brand_name" v-model="form.name"
                     placeholder="Honda">
             </div>

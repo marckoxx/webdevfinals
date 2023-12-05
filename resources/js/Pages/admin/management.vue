@@ -32,6 +32,11 @@
                                             <li class="button  rounded-pill mb-3"><Link :href="route('types.index')" class="btn">Manage Motorcycle Types</Link></li>
                                         </ul>
                                     </div>
+                                    <div class="col-md-3">
+                                        <ul class="list-group">
+                                            <li class="button  rounded-pill mb-3"><Link :href="route('helmets.index')" class="btn">Manage Helmets</Link></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +61,6 @@
 
 .button:hover {
     background-image: linear-gradient(to bottom right, #D09CFA, #FFFFD0);
-    transform: translateY(-10px);
 }
 </style>
 <script setup>
