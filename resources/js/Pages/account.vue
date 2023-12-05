@@ -82,3 +82,6 @@ const props = defineProps({
 
 const authUser = ref(props.auth.user !== null);
 </script>
+<style>
+
+</style>
