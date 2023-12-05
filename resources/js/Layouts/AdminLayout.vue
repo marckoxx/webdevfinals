@@ -13,8 +13,13 @@ const { props } = usePage();
 
 <template>
     <header>
-        <nav class="navbar navbar-expand-md ">
-            <div class="container-fluid me-5" style="justify-content: flex-end; ">
+        <nav class="navbar navbar-expand-md bg-body-tertiary sticky-top">
+            <div class="container-fluid">
+                <Link class="navbar-brand d-flex align-items-center" :href="route('dashboard.index')">
+                <img class="rounded mr-1" :src="'/images/logo/logo3.png'" alt="Company Logo"
+                    style="width: 37px; height: 37px;">
+                MotoRent
+                </Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">

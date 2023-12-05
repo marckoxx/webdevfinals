@@ -23,7 +23,7 @@ console.log(props.auth.user.is_admin);
 
 <template>
     <header>
-        <nav class="navbar navbar-expand-md bg-body-tertiary">
+        <nav class="navbar navbar-expand-md bg-body-tertiary sticky-top">
             <div class="container-fluid">
                 <Link class="navbar-brand d-flex align-items-center" :href="route('index')">
                 <img class="rounded mr-1" :src="'/images/logo/logo3.png'" alt="Company Logo"
