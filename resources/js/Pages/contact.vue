@@ -1,7 +1,7 @@
 <template>
     <Head title="Contact Us" />
     <Layout />
-        <main class="container mb-8">
+        <main class="container mb-8 mt-5">
             <div class="py-5 text-center mb-5">
                 <h2 class=" fw-bold" style="color: #A555EC;">CONTACT US</h2>
                 <h4><i class="fa-solid fa-clock mt-5"></i> Hours: Monday-Sunday 8:30AM to 8:00PM</h4>

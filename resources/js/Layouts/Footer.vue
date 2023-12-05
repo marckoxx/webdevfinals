@@ -25,8 +25,8 @@ const SideItems = [
                             Ride with us and make every journey an unforgettable experience."
                         </p>
 
-                        <div class="footerbtn  mt-4">
-                            <link rel="stylesheet" href="login.vue">Explore Now !!!
+                        <div class="footerbtn mt-4 d-flex align-items-center justify-content-center">
+                            <Link :href="route('login')" style="text-decoration: none;">Explore Now !!!</Link>
                         </div>
                     </div>
                     <!-- col -->
