@@ -13,7 +13,7 @@
                                     <h2 class="fw-bold">Rental Management</h2>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" >
                             <div class="col-sm-4 col-lg-12 order-sm-1 mt-3  ">
                                 <!-- Visible on screens > 991px -->
                                 <div class="row g-5 mx-2">
@@ -47,13 +47,12 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    width: 250px;
+    width: 230px;
+
 }
 .btn{
-
     color: black;
 }
-
 .button:hover {
     background-image: linear-gradient(to bottom right, #D09CFA, #FFFFD0);
     transform: translateY(-10px);

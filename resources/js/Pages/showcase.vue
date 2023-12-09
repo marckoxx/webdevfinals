@@ -68,21 +68,14 @@ const startDate = ref('');
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <label for="contact" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="contact" placeholder="1234 Main St" required="">
-                    </div>
-                    <div class="col-12">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="you@example.com">
-                    </div>
                     <div class="row">
-                        <div class="col-6">
-                            <label for="contact" class="form-label">Phone No.</label>
+                        <label class="form-label" for="dateRange">Select Time Range</label>
+                        <div class="col-7">
+                            <label for="contact" class="form-label">Address</label>
                             <input type="text" class="form-control" id="contact" placeholder="1234 Main St" required="">
                         </div>
-                        <div class="col-6">
-                            <label for="contact" class="form-label">Secondary Phone No.</label>
+                        <div class="col-5">
+                            <label for="contact" class="form-label">Phone No.</label>
                             <input type="text" class="form-control" id="contact" placeholder="1234 Main St" required="">
                         </div>
                     </div>
