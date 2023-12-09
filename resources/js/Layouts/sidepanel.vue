@@ -15,7 +15,6 @@ const Management = [
 </script>
 
 <template>
-    <slot />
     <div class="container col-lg-2 sidepanel d-flex flex-column align-items-center p-0 " style="height: 100vh;">
         <Link class="navbar-brand d-flex align-items-center ps-2 my-4" :href="route('dashboard.index')">
                 <img class="rounded mr-1" :src="'/images/logo/logo3.png'" alt="Company Logo"
@@ -44,7 +43,6 @@ const Management = [
         </div>
 </div>
 
-    <slot />
 </template>
 <style scoped>
 .container{
