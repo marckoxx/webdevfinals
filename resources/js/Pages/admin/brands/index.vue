@@ -46,11 +46,16 @@ const resetSearch = () => {
 
                             </div>
                         <div class="ms-auto  mt-n1 col-auto pe-3 mt-3 ">
-                            <div class="col-sm-3 col-lg-3 w-30 ms-5 my-3"> <!-- Adjusted width to 75% -->
-                                <div class="position-relative mb-lg-2 d-flex align-items-center">
-                                    <i class="ai-search fs-lg me-2"></i>
-                                    <input class="form-control rounded-pill flex-grow-1" style="border: 1px solid;" type="search" placeholder="Enter keywords.." v-model="search">
+                            <div class="row my-4">
+                                <div class="col-sm-6 col-lg-6">
+                                    <Link :href="route('brands.create')" class="btn rounded-pill m-1 fw-bold mx-5" style="background-color: #FFFFD0; border: 1px solid;">Add a Brands</Link>
                                 </div>
+                                    <div class="col-sm-3 col-lg-3 w-30 ms-5 my-3"> <!-- Adjusted width to 75% -->
+                                        <div class="position-relative mb-lg-2 d-flex align-items-center">
+                                            <i class="ai-search fs-lg me-2"></i>
+                                            <input class="form-control rounded-pill flex-grow-1" style="border: 1px solid;" type="search" placeholder="Enter keywords.." v-model="search">
+                                        </div>
+                                    </div>
                             </div>
                             <table class="table mx-5 ">
                                 <thead >
